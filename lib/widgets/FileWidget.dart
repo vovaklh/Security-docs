@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:security_docs/views/CustomIcons.dart';
+import 'package:security_docs/pages/CustomIcons.dart';
 
 class FileWidget extends StatelessWidget {
   String fileName;
