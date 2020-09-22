@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 Map<String, Image> icons = {
   "pdf" : Image(image: AssetImage("icons/pdf.png")),
   "jpg" : Image(image: AssetImage("icons/jpg.png")),
+  "png" : Image(image: AssetImage("icons/png.png")),
   "txt" : Image(image: AssetImage("icons/txt.png")),
   "doc" : Image(image: AssetImage("icons/doc.png")),
   "docx" : Image(image: AssetImage("icons/doc.png")),
