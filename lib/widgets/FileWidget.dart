@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:security_docs/logics/fileUtils.dart';
 import 'package:security_docs/pages/CustomIcons.dart';
 
 class FileWidget extends StatelessWidget {
+  String filePath;
   String fileName;
   String fileExtension;
   Image icon;
 
-  FileWidget({String fileName, String fileExtension}){
+  FileWidget({String filePath, String fileName, String fileExtension}){
+    this.filePath = filePath;
     this.fileName = fileName;
     this.fileExtension = fileExtension;
     this.icon = icons[fileExtension] ?? icons["other"];
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Column(
         children: [Row(
-          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Expanded(
               flex: 2,
@@ -29,7 +32,7 @@ class FileWidget extends StatelessWidget {
                 flex: 6,
                 child: Container(
                   child: Text(
-                    "$fileExtension",
+                    "$fileName",
                     style: TextStyle(
                       fontSize: 17,
                     ),
@@ -42,7 +45,7 @@ class FileWidget extends StatelessWidget {
               child: Container(
                 child: Center(
                   child: RaisedButton(
-                    onPressed: (){print("Pressed");},
+                    onPressed: () {openFile(filePath: filePath, fileName: fileName);},
                     child: Text("Open"),
                     color: Colors.grey[100],
                   ),
