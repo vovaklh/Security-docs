@@ -1,10 +1,10 @@
 import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:security_docs/widgets/FileWidget.dart';
 import 'package:security_docs/logics/CustomFile.dart';
 import 'package:security_docs/logics/fileUtils.dart';
+import 'package:security_docs/widgets/MainButtonWidget.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -62,9 +62,7 @@ class _HomePageState extends State<HomePage> {
                   });
             }
           }),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        addFile(CustomFile(filePath: "dfdf", fileName: "fgfg", fileExtension: "pdpf"));
-      })
+      floatingActionButton: PopUpButton(),
     );
   }
 }
