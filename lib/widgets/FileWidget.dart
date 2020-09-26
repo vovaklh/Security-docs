@@ -45,9 +45,13 @@ class FileWidget extends StatelessWidget {
               child: Container(
                 child: Center(
                   child: RaisedButton(
+                    padding: EdgeInsets.all(5.0),
                     onPressed: () {openFile(filePath: filePath, fileName: fileName);},
                     child: Text("Open"),
                     color: Colors.grey[100],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
                   ),
                 ),
                 height: 50,
