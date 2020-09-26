@@ -9,10 +9,12 @@ Future<void> openFile({String filePath, String fileName}) async {
 }
 
 Future<String> getLocalPath() async {
-  final dir = await getExternalStorageDirectory();
+  var dir  = await getExternalStorageDirectory();
 
   return dir.path;
 }
+
+
 
 Future<List<CustomFile>> loadFiles() async {
   // Create list of custom files
@@ -27,23 +29,6 @@ Future<List<CustomFile>> loadFiles() async {
   for (String i in allFiles){
     files.add(CustomFile(filePath: path + "/", fileName: i.split("/").last, fileExtension: i.split(".").last));
   }
-
-  return files;
-}
-
-List<CustomFile> convertList(){
-  List<CustomFile> files = new List();
-
-  Future<List<CustomFile>> futureFiles = loadFiles();
-
-  futureFiles.then((value) {
-    value.forEach((element) {
-      files.add(CustomFile(filePath: element.filePath, fileName: element.fileName, fileExtension: element.fileExtension));
-    }
-      );
-  });
-
-  print(files.length);
 
   return files;
 }
