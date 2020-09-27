@@ -8,12 +8,12 @@ Future<void> openFile({String filePath, String fileName}) async {
   await OpenFile.open(filePath + fileName);
 }
 
+
 Future<String> getLocalPath() async {
   var dir  = await getExternalStorageDirectory();
 
   return dir.path;
 }
-
 
 
 Future<List<CustomFile>> loadFiles() async {
