@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:security_docs/widgets/FileWidget.dart';
 import 'package:security_docs/logics/CustomFile.dart';
 import 'package:security_docs/logics/fileUtils.dart';
@@ -24,19 +25,28 @@ class _HomePageState extends State<HomePage> {
     streamController = StreamController();
     stream = streamController.stream;
 
-    getFiles();
-  }
-
-  getFiles() async {
-    files = await loadFiles();
+    files = new List<CustomFile>();
     streamController.add(files);
+
+    addFile();
   }
 
-  addFile(CustomFile file){
-    if(files.where((el) => el == file).toList().length == 0){
-      setState(() {
-        files.add(file);
-      });
+
+  addFile() async {
+    while(true){
+      List<CustomFile> newFiles = await loadFiles();
+      if(newFiles.length > files.length){
+        for(int i = files.length; i < newFiles.length; i++){
+          CustomFile newFile = newFiles[i];
+
+          if(files.where((el) => el == newFile).toList().length == 0){
+            setState(() {
+              files.add(newFile);
+            });
+          }
+        }
+      }
+      await Future.delayed(Duration(microseconds: 500));
     }
   }
 
@@ -52,8 +62,19 @@ class _HomePageState extends State<HomePage> {
             if(snapshot.data == null){
               return Center(child: CircularProgressIndicator());
             }
+            else if(snapshot.data.length == 0){
+              return Center(
+                child: Text("No documents",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.grey[300],
+                          ),
+                ),
+              );
+            }
             else{
               return ListView.builder(
+                  scrollDirection: Axis.vertical,
                   padding: EdgeInsets.only(top: 5.0),
                   itemCount: snapshot.data.length,
                   itemBuilder: (BuildContext context, int index){

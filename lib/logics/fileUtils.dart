@@ -2,7 +2,8 @@ import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:security_docs/logics/CustomFile.dart';
 import 'dart:io' as io;
-
+import 'package:file_picker/file_picker.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 Future<void> openFile({String filePath, String fileName}) async {
   await OpenFile.open(filePath + fileName);
@@ -31,4 +32,30 @@ Future<List<CustomFile>> loadFiles() async {
   }
 
   return files;
+}
+
+Future<String> getOtherFilePath() async{
+  String path = await FilePicker.getFilePath();
+
+  return path;
+}
+
+void moveFile(String pathFrom) async{
+  String pathTo = await getLocalPath();
+  String fileName = pathFrom.split("/").last;
+  String fileExtension = pathFrom.split(".").last;
+
+  var permission = await Permission.storage.status;
+
+  if (!permission.isGranted){
+    await Permission.storage.request();
+  }
+
+  try{
+    await io.File(pathFrom).rename(pathTo+"/"+fileName);
+  } on io.FileSystemException catch (e){
+    var copy = await io.File(pathFrom).copy(pathTo + "/" + fileName);
+    await io.File(pathFrom).delete();
+  }
+
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:security_docs/logics/fileUtils.dart';
 
 enum MenuOption {addFace, addFile}
 
@@ -7,7 +8,10 @@ void choiceAction(MenuOption action){
     print("Add face");
   }
   else if(action == MenuOption.addFile){
-    print("Add file");
+    Future<String> path = getOtherFilePath();
+    path.then((value) {
+      moveFile(value);
+    });
   }
 }
 
