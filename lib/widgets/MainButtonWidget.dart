@@ -15,9 +15,7 @@ void choiceAction(MenuOption action){
   }
 }
 
-class PopUpButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
+Widget PopUpButton () {
     return Container(
       height: 50,
       width: 50,
@@ -70,5 +68,4 @@ class PopUpButton extends StatelessWidget {
             ];
       }),
     );
-  }
 }

@@ -73,14 +73,16 @@ class _HomePageState extends State<HomePage> {
               );
             }
             else{
-              return ListView.builder(
-                  scrollDirection: Axis.vertical,
-                  padding: EdgeInsets.only(top: 5.0),
-                  itemCount: snapshot.data.length,
-                  itemBuilder: (BuildContext context, int index){
-                    return FileWidget(filePath: snapshot.data[index].filePath, fileName: snapshot.data[index].fileName,
-                                      fileExtension: snapshot.data[index].fileExtension,);
-                  });
+              return SafeArea(
+                child: ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    padding: EdgeInsets.only(top: 5.0),
+                    itemCount: snapshot.data.length,
+                    itemBuilder: (BuildContext context, int index){
+                      return FileWidget(filePath: snapshot.data[index].filePath, fileName: snapshot.data[index].fileName,
+                                        fileExtension: snapshot.data[index].fileExtension,);
+                    }),
+              );
             }
           }),
       floatingActionButton: PopUpButton(),

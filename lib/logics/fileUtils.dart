@@ -10,19 +10,24 @@ Future<void> openFile({String filePath, String fileName}) async {
 }
 
 
-Future<String> getLocalPath() async {
+Future<String> getExternalPath() async {
   var dir  = await getExternalStorageDirectory();
 
   return dir.path;
 }
 
+Future<String> getLocalPath() async{
+  var dir = await getApplicationDocumentsDirectory();
+
+  return dir.path;
+}
 
 Future<List<CustomFile>> loadFiles() async {
   // Create list of custom files
   List<CustomFile> files = new List();
 
   //Get path to file directory
-  String path = await getLocalPath();
+  String path = await getExternalPath();
 
   // Create string list of all files
   List<String> allFiles = io.Directory("$path").listSync().map((e) => e.path).toList();
@@ -41,7 +46,7 @@ Future<String> getOtherFilePath() async{
 }
 
 void moveFile(String pathFrom) async{
-  String pathTo = await getLocalPath();
+  String pathTo = await getExternalPath();
   String fileName = pathFrom.split("/").last;
   String fileExtension = pathFrom.split(".").last;
 
