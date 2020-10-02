@@ -5,7 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:security_docs/widgets/FileWidget.dart';
 import 'package:security_docs/logics/CustomFile.dart';
 import 'package:security_docs/logics/fileUtils.dart';
-import 'package:security_docs/widgets/MainButtonWidget.dart';
+import 'package:security_docs/widgets/PopUpButton.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -25,13 +25,16 @@ class _HomePageState extends State<HomePage> {
     streamController = StreamController();
     stream = streamController.stream;
 
+    //Create empty list with user's files
     files = new List<CustomFile>();
     streamController.add(files);
 
+    // Start controlling changes in directory with user's files
     addFile();
   }
 
-
+  // Function that check changes in directory with files and
+  // add files only if length of loaded files is longer than length of files in class
   addFile() async {
     while(true){
       List<CustomFile> newFiles = await loadFiles();
@@ -40,9 +43,11 @@ class _HomePageState extends State<HomePage> {
           CustomFile newFile = newFiles[i];
 
           if(files.where((el) => el == newFile).toList().length == 0){
-            setState(() {
-              files.add(newFile);
-            });
+            if(mounted){
+              setState(() {
+                files.add(newFile);
+              });
+            }
           }
         }
       }
@@ -59,10 +64,10 @@ class _HomePageState extends State<HomePage> {
       body: StreamBuilder(
           stream: stream,
           builder: (BuildContext ctx, AsyncSnapshot snapshot){
-            if(snapshot.data == null){
+            if(snapshot.data == null){ // Show progress indicator if we got null
               return Center(child: CircularProgressIndicator());
             }
-            else if(snapshot.data.length == 0){
+            else if(snapshot.data.length == 0){ //Show that user has no files
               return Center(
                 child: Text("No documents",
                           style: TextStyle(
@@ -74,7 +79,7 @@ class _HomePageState extends State<HomePage> {
             }
             else{
               return SafeArea(
-                child: ListView.builder(
+                child: ListView.builder(// Else create ListView with files
                     scrollDirection: Axis.vertical,
                     padding: EdgeInsets.only(top: 5.0),
                     itemCount: snapshot.data.length,
@@ -85,7 +90,7 @@ class _HomePageState extends State<HomePage> {
               );
             }
           }),
-      floatingActionButton: PopUpButton(),
+      floatingActionButton: PopUpButton(), //Create popupbutton in right bottom side
     );
   }
 }

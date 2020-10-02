@@ -1,21 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:security_docs/logics/fileUtils.dart';
+import 'package:security_docs/logics/Password.dart';
 
 enum MenuOption {addFace, addFile}
 
-void choiceAction(MenuOption action){
-  if (action == MenuOption.addFace){
-    print("Add face");
+void choiceAction(MenuOption choice, BuildContext context){
+  if (choice == MenuOption.addFace){
+    Password().checkIfPasswordExist().then((passwordExist) {
+      if(!passwordExist){
+          Navigator.pushReplacementNamed(context, "/passwordpage");
+      }
+    });
   }
-  else if(action == MenuOption.addFile){
+  else if(choice == MenuOption.addFile){
     Future<String> path = getOtherFilePath();
     path.then((value) {
-      moveFile(value);
+      if (value != null) { // If user choose file
+        moveFile(value);
+        }
     });
   }
 }
 
-Widget PopUpButton () {
+class PopUpButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return Container(
       height: 50,
       width: 50,
@@ -24,11 +33,11 @@ Widget PopUpButton () {
         color: Colors.blue,
       ),
       child: PopupMenuButton(
-          onSelected: choiceAction,
+          onSelected: (choice) => choiceAction(choice, context),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0)),
+              borderRadius: BorderRadius.circular(10.0)),
           icon: Icon(Icons.add, color: Colors.white, size: 30,),
-          itemBuilder: (BuildContext context){
+          itemBuilder: (BuildContext context) {
             return <PopupMenuEntry<MenuOption>>[
               PopupMenuItem(
                 child: Row(
@@ -39,9 +48,9 @@ Widget PopUpButton () {
                       padding: EdgeInsets.only(left: 5.0),
                       child: Center(
                         child: Text("Add face",
-                        style: TextStyle(
-                          fontSize: 16,
-                        ),),
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),),
                       ),
                     )
                   ],
@@ -56,9 +65,9 @@ Widget PopUpButton () {
                       padding: EdgeInsets.only(left: 5.0),
                       child: Center(
                         child: Text("Add file",
-                        style: TextStyle(
-                          fontSize: 16,
-                        ),
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
                         ),
                       ),
                     ),
@@ -66,6 +75,7 @@ Widget PopUpButton () {
                 ),
                 value: MenuOption.addFile,)
             ];
-      }),
+          }),
     );
+  }
 }

@@ -29,6 +29,7 @@ dependencies:
   file_picker: ^1.4.2
   permission_handler: ^5.0.1+1
   passwordfield: ^0.0.82
+  audioplayers: ^0.16.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -54,6 +55,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - assets/sounds/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
