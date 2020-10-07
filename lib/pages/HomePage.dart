@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
         for(int i = files.length; i < newFiles.length; i++){
           CustomFile newFile = newFiles[i];
 
-          if(files.where((el) => el == newFile).toList().length == 0){
+          if(files.where((el) => el == newFile).toList().length == 0 && newFile.fileExtension != "Pictures"){
             if(mounted){
               setState(() {
                 files.add(newFile);
@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
           }
         }
       }
-      await Future.delayed(Duration(microseconds: 500));
+      await Future.delayed(Duration(milliseconds: 500));
     }
   }
 

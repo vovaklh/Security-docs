@@ -45,7 +45,7 @@ Future<List<CustomFile>> loadFiles() async {
 
   //Add to our CustomFile list by splitting "/" for getting file name and "." for getting file extension
   for (String i in allFiles){
-    files.add(CustomFile(filePath: path + "/", fileName: i.split("/").last, fileExtension: i.split(".").last));
+    files.add(CustomFile(filePath: path + "/", fileName: i.split("/").last, fileExtension: i.split("/").last.split(".").last));
   }
 
   return files;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:security_docs/logics/fileUtils.dart';
 import 'package:security_docs/logics/Password.dart';
 
-enum MenuOption {addFace, addFile}
+enum MenuOption {addFace, addFile, test}
 
 void choiceAction(MenuOption choice, BuildContext context){
   if (choice == MenuOption.addFace){
@@ -19,6 +19,10 @@ void choiceAction(MenuOption choice, BuildContext context){
         moveFile(value);
         }
     });
+  }
+
+  else if (choice == MenuOption.test){
+    Navigator.pushReplacementNamed(context, "/facepage");
   }
 }
 
@@ -73,7 +77,25 @@ class PopUpButton extends StatelessWidget {
                     ),
                   ],
                 ),
-                value: MenuOption.addFile,)
+                value: MenuOption.addFile,),
+              PopupMenuItem(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Icon(Icons.camera, size: 35,),
+                    Container(
+                      padding: EdgeInsets.only(left: 5.0),
+                      child: Center(
+                        child: Text("Test",
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                value: MenuOption.test,)
             ];
           }),
     );

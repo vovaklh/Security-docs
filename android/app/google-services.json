@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "421852841617",
+    "firebase_url": "https://security-docs-37772.firebaseio.com",
+    "project_id": "security-docs-37772",
+    "storage_bucket": "security-docs-37772.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:421852841617:android:d8fa1853374c9428072130",
+        "android_client_info": {
+          "package_name": "com.vovaklh.security_docs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "421852841617-952npkq0gdqr9s1ur72pp2evnt68efap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUmlOiU073ugF9QWmpQanwBuBhb1jvzus"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "421852841617-952npkq0gdqr9s1ur72pp2evnt68efap.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
