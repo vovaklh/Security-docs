@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 import 'package:image/image.dart' as imutils;
+import 'package:security_docs/logics/FaceVerificator.dart';
 
 class FacePage extends StatefulWidget {
   @override
@@ -13,15 +14,9 @@ class FacePage extends StatefulWidget {
 class _FacePageState extends State<FacePage> {
   Image face;
   String text = "No image selected";
-
-  Future<ui.Image> loadImage(File image) async{
-    var img = await image.readAsBytes();
-
-    return await decodeImageFromList(img);
-  }
+  FaceVerificator faceVerificator;
 
   Future detectFaces() async{
-
     setState(() {
       this.face = null;
       this.text = "Wait...";
@@ -54,6 +49,9 @@ class _FacePageState extends State<FacePage> {
       setState(() {
         this.face = Image.memory(imutils.encodePng(croppedFace));
       });
+
+      this.faceVerificator = FaceVerificator(112, 128, 128);
+      faceVerificator.getOutput("assets/models/mobilefacenet.tflite", croppedFace);
     }
   }
 
