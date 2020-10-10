@@ -1,6 +1,8 @@
+import 'dart:io';
 import 'package:image/image.dart' as imutils;
 import 'package:security_docs/logics/faceUtils.dart';
 import 'package:tflite_flutter/tflite_flutter.dart' as tf;
+import 'package:security_docs/logics/fileUtils.dart';
 
 class FaceVerificator{
 
@@ -36,18 +38,37 @@ class FaceVerificator{
   }
 
 
-  void getOutput(String modelPath,  imutils.Image face) async{
+  Future<List<dynamic>> getOutput(String modelPath,  imutils.Image face) async{
+      // Load model
       await loadModel(modelPath: modelPath);
 
+      // Resize face to 112 height and with
+      face = imutils.copyResizeCropSquare(face, 112);
+
+      //Reshape image
       List input = imageToByteListFloat32(face, size, mean, std);
       input = input.reshape([1, size, size, 3]);
 
+      //Creating list for otput
       List output = List(1 * 192).reshape([1, 192]);
       this.interpreter.run(input, output);
 
+      //Reshape otput
       output = output.reshape([192]);
 
-      print(output);
+      return output;
+  }
+
+  void saveArrayToFile(List<dynamic> vector) async {
+    String path = await getLocalPath();
+
+    File(path + "/" + "face.txt").writeAsStringSync(vector.toString());
+  }
+
+  Future<bool> checkIfFaceExist() async{
+    String path = await getLocalPath();
+
+    return File(path + "/" + "face.txt").existsSync();
   }
 
 }

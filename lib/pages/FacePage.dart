@@ -51,7 +51,9 @@ class _FacePageState extends State<FacePage> {
       });
 
       this.faceVerificator = FaceVerificator(112, 128, 128);
-      faceVerificator.getOutput("assets/models/mobilefacenet.tflite", croppedFace);
+      List<dynamic> faceVector = await faceVerificator.getOutput("models/mobilefacenet.tflite", croppedFace);
+
+      faceVerificator.saveArrayToFile(faceVector);
     }
   }
 
