@@ -1,16 +1,20 @@
 class CustomFile{
-  String filePath;
-  String fileName;
-  String fileExtension;
+  String _filePath;
+  String _fileName;
+  String _fileExtension;
+
+  String get filePath => _filePath;
+  String get fileName => _fileName;
+  String get fileExtension => _fileExtension;
 
   CustomFile({String filePath, String fileName, String fileExtension}){
-    this.filePath = filePath;
-    this.fileName = fileName;
-    this.fileExtension = fileExtension;
+    this._filePath = filePath;
+    this._fileName = fileName;
+    this._fileExtension = fileExtension;
   }
 
   bool operator == (other){
-    if (this.filePath == other.filePath && this.fileName == other.fileName && this.fileExtension == other.fileExtension){
+    if (this._filePath == other.filePath && this._fileName == other.fileName && this._fileExtension== other.fileExtension){
       return true;
     }
     else{

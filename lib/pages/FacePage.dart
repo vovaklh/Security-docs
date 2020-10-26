@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'dart:ui' as ui;
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 import 'package:image/image.dart' as imutils;
 import 'package:security_docs/logics/FaceVerificator.dart';
+import 'package:security_docs/logics/faceUtils.dart';
+import 'package:security_docs/logics/MyFaceDetector.dart';
+import 'package:security_docs/logics/Strings.dart' show facePageStrings;
 
 class FacePage extends StatefulWidget {
   @override
@@ -12,48 +14,56 @@ class FacePage extends StatefulWidget {
 }
 
 class _FacePageState extends State<FacePage> {
-  Image face;
-  String text = "No image selected";
-  FaceVerificator faceVerificator;
+  Image _face;
+  String _text = facePageStrings.initialMessage;
+
+  void setStatus(String text){
+    setState(() {
+      this._text = text;
+    });
+  }
+
+  void setButtonToDefault(){
+    setState(() {
+      this._face == null;
+      this._text = facePageStrings.imageSelected;
+    });
+  }
+
+  void encodeFace(imutils.Image face) async{
+    FaceVerificator faceVerificator = FaceVerificator(112, 128, 128);
+    await faceVerificator.loadModel(modelPath: "models/mobilefacenet.tflite");
+    List faceVector = faceVerificator.getOutput(face);
+    faceVerificator.saveArrayToFile(faceVector);
+    faceVerificator.closeInterpreter();
+  }
 
   Future detectFaces() async{
-    setState(() {
-      this.face = null;
-      this.text = "Wait...";
-    });
+    setButtonToDefault();
 
     File image = await ImagePicker.pickImage(source: ImageSource.camera, preferredCameraDevice: CameraDevice.front);
-
-    FirebaseVisionImage visionImage = FirebaseVisionImage.fromFile(image);
-    FaceDetector faceDetector = FirebaseVision.instance.faceDetector();
-
-    List<Face> faces = await faceDetector.processImage(visionImage);
+    MyFaceDetector myFaceDetector = MyFaceDetector();
+    List<Face> faces = await myFaceDetector.predictImageFromFile(image);
 
     if(faces.length == 0){
-      setState(() {
-        text = "No face was found";
-      });
+      setStatus(facePageStrings.noFaces);
     }
 
     else if(faces.length > 1){
-      setState(() {
-        text = "Too many faces";
-      });
+      setStatus(facePageStrings.manyFaces);
     }
 
     else{
-      imutils.Image croppedFace = imutils.copyRotate(imutils.copyCrop(imutils.decodeImage(image.readAsBytesSync()),
-          faces.first.boundingBox.topLeft.dy.floor(), faces.first.boundingBox.topLeft.dx.floor(),
-          faces.first.boundingBox.height.floor(), faces.first.boundingBox.width.floor()), -90);
+      imutils.Image croppedFace = cropFace(imutils.decodeImage(image.readAsBytesSync()), faces.first, true);
 
       setState(() {
-        this.face = Image.memory(imutils.encodePng(croppedFace));
+        this._face = Image.memory(imutils.encodePng(croppedFace));
       });
 
-      this.faceVerificator = FaceVerificator(112, 128, 128);
-      List<dynamic> faceVector = await faceVerificator.getOutput("models/mobilefacenet.tflite", croppedFace);
+      encodeFace(croppedFace);
 
-      faceVerificator.saveArrayToFile(faceVector);
+      await Future.delayed(Duration(seconds: 2));
+      Navigator.pushReplacementNamed(context, "/homepage");
     }
   }
 
@@ -61,36 +71,51 @@ class _FacePageState extends State<FacePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Face Detection"),
+        title: Text(facePageStrings.title),
       ),
-      body: (this.face == null) ?
-        Center(
-          child: Text(text,
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.grey[300],
-            ),
-          ),
-        ) :
-        Center(
-          child: Container(
-              child: this.face,
-            ),
-          ),
-
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.grey[250],
-        child: Container(height: 60,),
-
-      ),
+      body: textOrFace(),
+      bottomNavigationBar: bottomNavigator(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: Container(
-        height: 65,
-        width: 65,
-        child: FloatingActionButton(
-          onPressed: detectFaces,
-          child: Icon(Icons.add_a_photo, size: 35,),
+      floatingActionButton: mainButton(),
+    );
+  }
+
+
+  // Return image with face or text
+  Widget textOrFace(){
+    if(_face == null){
+      return Center(
+        child: Text(_text,
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.grey[300],
+          ),
         ),
+      );
+    }
+    else{
+      return Center(
+        child: Container(
+          child: this._face,
+        ),
+      );
+    }
+  }
+
+  Widget bottomNavigator(){
+    return BottomAppBar(
+      color: Colors.grey[250],
+      child: Container(height: 60,),
+    );
+  }
+
+  Widget mainButton(){
+    return Container(
+      height: 65,
+      width: 65,
+      child: FloatingActionButton(
+        onPressed: () => detectFaces(),
+        child: Icon(Icons.add_a_photo, size: 35,),
       ),
     );
   }

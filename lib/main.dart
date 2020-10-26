@@ -8,19 +8,19 @@ void main() async{
   WidgetsFlutterBinding.ensureInitialized(); // For main function with async
   bool passwordExist =  await Password().checkIfPasswordExist(); //Get password existing
 
-  // If password exist we ask user to enter password to show page with files
+  // Show password page if password existe
   if(passwordExist){
     runApp(MaterialApp(
-      home: PasswordPage("Enter"),
+      initialRoute: "/passwordpage",
       debugShowCheckedModeBanner: false,
       routes: {
         "/homepage" : (_) => new HomePage(),
-        "/facepage" : (_) => new FacePage()
+        "/passwordpage": (_) => new PasswordPage("Enter"),
       },
     ));
   }
 
-  //Else password does not exist we show user empty page with files and he can set password
+  //Else show homepage
   else {
     runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
