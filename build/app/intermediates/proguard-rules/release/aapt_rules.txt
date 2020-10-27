@@ -1,0 +1,18 @@
+# Referenced at D:\Android_projects\security_docs\build\app\intermediates\merged_manifests\release\AndroidManifest.xml:30
+-keep class androidx.core.app.CoreComponentFactory { <init>(); }
+# Referenced at D:\Android_projects\security_docs\build\app\intermediates\merged_manifests\release\AndroidManifest.xml:108
+-keep class androidx.core.content.FileProvider { <init>(); }
+# Referenced at D:\Android_projects\security_docs\build\app\intermediates\merged_manifests\release\AndroidManifest.xml:35
+-keep class com.example.security_docs.MainActivity { <init>(); }
+# Referenced at D:\Android_projects\security_docs\build\app\intermediates\merged_manifests\release\AndroidManifest.xml:127
+-keep class com.google.android.gms.common.api.GoogleApiActivity { <init>(); }
+# Referenced at D:\Android_projects\security_docs\build\app\intermediates\merged_manifests\release\AndroidManifest.xml:78
+-keep class com.google.firebase.components.ComponentDiscoveryService { <init>(); }
+# Referenced at D:\Android_projects\security_docs\build\app\intermediates\merged_manifests\release\AndroidManifest.xml:118
+-keep class com.google.firebase.iid.FirebaseInstanceIdReceiver { <init>(); }
+# Referenced at D:\Android_projects\security_docs\build\app\intermediates\merged_manifests\release\AndroidManifest.xml:132
+-keep class com.google.firebase.provider.FirebaseInitProvider { <init>(); }
+# Referenced at D:\Android_projects\security_docs\build\app\intermediates\merged_manifests\release\AndroidManifest.xml:30
+-keep class io.flutter.app.FlutterApplication { <init>(); }
+# Referenced at D:\Android_projects\security_docs\build\app\intermediates\merged_manifests\release\AndroidManifest.xml:99
+-keep class io.flutter.plugins.imagepicker.ImagePickerFileProvider { <init>(); }
