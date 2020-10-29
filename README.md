@@ -21,7 +21,7 @@ First of all, let’s see what does **“face detection”** and **“face verif
 
 ![Face_detection](resources/images/face_detection.png)
 
-**Face verification**: we want to compare two faces and answer the question whether faces are same or not. Face detection is part of face verification system. Firstly we need to find face face on an image. The next step is to compare faces using similarity metric.
+**Face verification**: we want to compare two faces and answer the question whether faces are same or not. Face detection is part of face verification system. Firstly we need to find face on an image. The next step is to compare faces using similarity metric.
 
 ![Face_verification](resources/images/face_verification.jpg)
 

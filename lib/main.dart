@@ -6,7 +6,7 @@ import 'package:security_docs/pages/FacePage.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized(); // For main function with async
-  bool passwordExist =  await Password().checkIfPasswordExist(); //Get password existing
+  bool passwordExist =  await Password().checkIfPasswordExist();
 
   // Show password page if password existe
   if(passwordExist){
