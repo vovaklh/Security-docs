@@ -1,12 +1,14 @@
-import 'dart:async';
+import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:security_docs/widgets/FileWidget.dart';
-import 'file:///D:/Android_projects/security_docs/lib/models/CustomFile.dart';
-import 'file:///D:/Android_projects/security_docs/lib/utils/fileUtils.dart';
 import 'package:security_docs/widgets/PopUpButton.dart';
 import 'package:security_docs/logics/Strings.dart' show homePageStrings;
+import 'package:security_docs/blocs/FileBloc.dart';
+import 'dart:async';
+import 'package:security_docs/models/CustomFile.dart';
+import 'package:security_docs/utils/fileUtils.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -14,19 +16,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final _bloc = BlocProvider.getBloc<FileBloc>();
   StreamController _streamController;
-  Stream _stream;
   List<CustomFile> _files;
 
   @override
-  void initState(){
-    super.initState();
-
+  void initState() {
+    // TODO: implement initState
     _streamController = StreamController();
-    _stream = _streamController.stream;
-
     _files = new List<CustomFile>();
     _streamController.add(_files);
+
+    super.initState();
 
     addFile();
   }
@@ -51,6 +52,14 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+
+  @override
+  void dispose() {
+    _bloc?.dispose();
+    print("disposed");
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,7 +73,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget userDocuments(){
     return StreamBuilder(
-        stream: _stream,
+        stream: _streamController.stream,
         builder: (BuildContext ctx, AsyncSnapshot snapshot){
           if(snapshot.data == null){ // Show progress indicator if we got null
             return Center(child: CircularProgressIndicator());

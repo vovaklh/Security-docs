@@ -1,6 +1,6 @@
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
-import 'file:///D:/Android_projects/security_docs/lib/models/CustomFile.dart';
+import 'package:security_docs/models/CustomFile.dart';
 import 'dart:io' as io;
 import 'package:file_picker/file_picker.dart';
 import 'package:permission_handler/permission_handler.dart';

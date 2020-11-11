@@ -1,11 +1,11 @@
 import 'package:camera/camera.dart';
 import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 import 'package:flutter/material.dart';
-import 'file:///D:/Android_projects/security_docs/lib/utils/cameraUtils.dart';
+import 'package:security_docs/utils/cameraUtils.dart';
 import 'package:security_docs/logics/MyFaceDetector.dart';
 import 'package:security_docs/logics/FaceVerificator.dart';
 import 'package:image/image.dart' as imutils;
-import 'file:///D:/Android_projects/security_docs/lib/utils/faceUtils.dart';
+import 'package:security_docs/utils/faceUtils.dart';
 
 class CameraVerificator{
   CameraController _cameraController;

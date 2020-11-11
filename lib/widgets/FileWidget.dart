@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'file:///D:/Android_projects/security_docs/lib/utils/fileUtils.dart';
-import 'file:///D:/Android_projects/security_docs/lib/icons/CustomIcons.dart';
+import 'package:security_docs/utils/fileUtils.dart';
+import 'package:security_docs/icons/CustomIcons.dart';
 
 Widget fileWidget({String filePath, String fileName, String fileExtension}){
   return Column(

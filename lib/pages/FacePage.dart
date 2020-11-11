@@ -4,7 +4,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 import 'package:image/image.dart' as imutils;
 import 'package:security_docs/logics/FaceVerificator.dart';
-import 'file:///D:/Android_projects/security_docs/lib/utils/faceUtils.dart';
+import 'package:security_docs/utils/faceUtils.dart';
 import 'package:security_docs/logics/MyFaceDetector.dart';
 import 'package:security_docs/logics/Strings.dart' show facePageStrings;
 

@@ -36,6 +36,7 @@ dependencies:
   tflite_flutter: ^0.5.0
   camera: ^0.5.8+8
   path: ^1.7.0
+  bloc_pattern: ^2.5.1
 
 
   # The following adds the Cupertino Icons font to your application.

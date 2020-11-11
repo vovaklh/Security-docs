@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'dart:ui';
-import 'package:image/image.dart' as imutils;
 import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 import 'package:camera/camera.dart';
 
