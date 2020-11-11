@@ -1,4 +1,4 @@
-import 'package:security_docs/logics/fileUtils.dart';
+import 'file:///D:/Android_projects/security_docs/lib/utils/fileUtils.dart';
 import 'dart:io';
 
 class Password{

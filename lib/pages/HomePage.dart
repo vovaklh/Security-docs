@@ -3,8 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:security_docs/widgets/FileWidget.dart';
-import 'package:security_docs/logics/CustomFile.dart';
-import 'package:security_docs/logics/fileUtils.dart';
+import 'file:///D:/Android_projects/security_docs/lib/models/CustomFile.dart';
+import 'file:///D:/Android_projects/security_docs/lib/utils/fileUtils.dart';
 import 'package:security_docs/widgets/PopUpButton.dart';
 import 'package:security_docs/logics/Strings.dart' show homePageStrings;
 

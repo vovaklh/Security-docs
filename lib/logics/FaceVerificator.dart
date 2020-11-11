@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'package:image/image.dart' as imutils;
-import 'package:security_docs/logics/faceUtils.dart';
+import 'file:///D:/Android_projects/security_docs/lib/utils/faceUtils.dart';
 import 'package:tflite_flutter/tflite_flutter.dart' as tf;
-import 'package:security_docs/logics/fileUtils.dart';
+import 'file:///D:/Android_projects/security_docs/lib/utils/fileUtils.dart';
 
 class FaceVerificator{
 
