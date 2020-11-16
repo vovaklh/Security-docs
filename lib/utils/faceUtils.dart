@@ -4,7 +4,8 @@ import 'dart:math';
 import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 
 // Convert imutils.image to float list
-Float32List imageToByteListFloat32(imutils.Image image, int inputSize, double mean, double std) {
+Float32List imageToByteListFloat32(
+    imutils.Image image, int inputSize, double mean, double std) {
   var convertedBytes = Float32List(1 * inputSize * inputSize * 3);
   var buffer = Float32List.view(convertedBytes.buffer);
   int pixelIndex = 0;
@@ -20,8 +21,8 @@ Float32List imageToByteListFloat32(imutils.Image image, int inputSize, double me
 }
 
 // Return cropped face
-imutils.Image cropFace(imutils.Image image, Face face, bool rotate){
-  if(rotate){
+imutils.Image cropFace(imutils.Image image, Face face, bool rotate) {
+  if (rotate) {
     image = imutils.copyRotate(image, -90);
   }
   double x = (face.boundingBox.left - 10);
@@ -29,11 +30,11 @@ imutils.Image cropFace(imutils.Image image, Face face, bool rotate){
   double w = (face.boundingBox.width + 10);
   double h = (face.boundingBox.height + 10);
 
-  imutils.Image croppedFace = imutils.copyCrop(image, x.round(), y.round(), w.round(), h.round());
+  imutils.Image croppedFace =
+      imutils.copyCrop(image, x.round(), y.round(), w.round(), h.round());
 
   return croppedFace;
 }
-
 
 // Return euclidean distance between faces
 double euclideanDistance(List e1, List e2) {

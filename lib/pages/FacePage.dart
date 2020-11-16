@@ -17,20 +17,20 @@ class _FacePageState extends State<FacePage> {
   Image _face;
   String _text = facePageStrings.initialMessage;
 
-  void setStatus(String text){
+  void setStatus(String text) {
     setState(() {
       this._text = text;
     });
   }
 
-  void setButtonToDefault(){
+  void setButtonToDefault() {
     setState(() {
       this._face == null;
       this._text = facePageStrings.imageSelected;
     });
   }
 
-  void encodeFace(imutils.Image face) async{
+  void encodeFace(imutils.Image face) async {
     FaceVerificator faceVerificator = FaceVerificator(112, 128, 128);
     await faceVerificator.loadModel(modelPath: "models/mobilefacenet.tflite");
     List faceVector = faceVerificator.getOutput(face);
@@ -38,23 +38,21 @@ class _FacePageState extends State<FacePage> {
     faceVerificator.closeInterpreter();
   }
 
-  Future detectFaces() async{
+  Future detectFaces() async {
     setButtonToDefault();
 
-    File image = await ImagePicker.pickImage(source: ImageSource.camera, preferredCameraDevice: CameraDevice.front);
+    File image = await ImagePicker.pickImage(
+        source: ImageSource.camera, preferredCameraDevice: CameraDevice.front);
     MyFaceDetector myFaceDetector = MyFaceDetector();
     List<Face> faces = await myFaceDetector.predictImageFromFile(image);
 
-    if(faces.length == 0){
+    if (faces.length == 0) {
       setStatus(facePageStrings.noFaces);
-    }
-
-    else if(faces.length > 1){
+    } else if (faces.length > 1) {
       setStatus(facePageStrings.manyFaces);
-    }
-
-    else{
-      imutils.Image croppedFace = cropFace(imutils.decodeImage(image.readAsBytesSync()), faces.first, true);
+    } else {
+      imutils.Image croppedFace = cropFace(
+          imutils.decodeImage(image.readAsBytesSync()), faces.first, true);
 
       setState(() {
         this._face = Image.memory(imutils.encodePng(croppedFace));
@@ -80,20 +78,19 @@ class _FacePageState extends State<FacePage> {
     );
   }
 
-
   // Return image with face or text
-  Widget textOrFace(){
-    if(_face == null){
+  Widget textOrFace() {
+    if (_face == null) {
       return Center(
-        child: Text(_text,
+        child: Text(
+          _text,
           style: TextStyle(
             fontSize: 20,
             color: Colors.grey[300],
           ),
         ),
       );
-    }
-    else{
+    } else {
       return Center(
         child: Container(
           child: this._face,
@@ -102,20 +99,25 @@ class _FacePageState extends State<FacePage> {
     }
   }
 
-  Widget bottomNavigator(){
+  Widget bottomNavigator() {
     return BottomAppBar(
       color: Colors.grey[250],
-      child: Container(height: 60,),
+      child: Container(
+        height: 60,
+      ),
     );
   }
 
-  Widget mainButton(){
+  Widget mainButton() {
     return Container(
       height: 65,
       width: 65,
       child: FloatingActionButton(
         onPressed: () => detectFaces(),
-        child: Icon(Icons.add_a_photo, size: 35,),
+        child: Icon(
+          Icons.add_a_photo,
+          size: 35,
+        ),
       ),
     );
   }

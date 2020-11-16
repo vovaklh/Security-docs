@@ -10,7 +10,7 @@ import 'package:security_docs/logics/Strings.dart' show passwordPageStrings;
 class PasswordPage extends StatefulWidget {
   String buttonText; //Text of button
 
-  PasswordPage(String buttonText){
+  PasswordPage(String buttonText) {
     this.buttonText = buttonText;
   }
 
@@ -22,25 +22,25 @@ class _PasswordPageState extends State<PasswordPage> {
   final _controller = TextEditingController();
   String _pattern;
   String _errorMessageIncorrectPassword = "";
-  String _errorPatternMessage = "Password must contain more than 7 symbols, 1 alphabet and 1 digit";
+  String _errorPatternMessage =
+      "Password must contain more than 7 symbols, 1 alphabet and 1 digit";
   String _buttonText;
   String _mainImage = "assets/images/lock.png";
   CameraVerificator _cameraVerificator;
 
-  _PasswordPageState(String buttonText){
+  _PasswordPageState(String buttonText) {
     this._buttonText = buttonText;
-    if(buttonText == "Set") _pattern = passwordPageStrings.passwordPattern;
+    if (buttonText == "Set") _pattern = passwordPageStrings.passwordPattern;
   }
 
-  // Dispose camera if it isn't null
   @override
-  void dispose(){
+  void dispose() {
     _cameraVerificator?.disposeVerification();
     super.dispose();
   }
 
   // Play signal and go to homepage if password is correct
-  void unblock() async {
+  Future<void> unblock() async {
     setState(() {
       _mainImage = passwordPageStrings.pathToGif; //Set image to unlock
     });
@@ -48,78 +48,76 @@ class _PasswordPageState extends State<PasswordPage> {
     final player = AudioCache(prefix: passwordPageStrings.pathToSound);
     player.play(passwordPageStrings.soundName); // Play sound of unlocking
     await Future.delayed(Duration(milliseconds: 900));
-    Navigator.pushReplacementNamed(context, "/homepage"); // Show page with user files
+
+    Navigator.pushReplacementNamed(context, "/homepage");
   }
 
-
-  bool validatePassword(String password){
-    if(password.length >= 8){
-        if(RegExp(_pattern).hasMatch(password)){
-          return true;
-        }
-        else{
-          setPatternMessage(passwordPageStrings.setIncorrectPassword);
-        }
-    }
-    else{
+  bool validatePassword(String password) {
+    if (password.length >= 8) {
+      if (RegExp(_pattern).hasMatch(password)) {
+        return true;
+      } else {
+        setPatternMessage(passwordPageStrings.setIncorrectPassword);
+      }
+    } else {
       return false;
     }
   }
 
-
   // Start camera stream and verifying faces
-  verifyFace() async{
+  verifyFace() async {
     FaceVerificator faceVerificator = FaceVerificator(112, 128, 128);
     bool faceExist = await faceVerificator.checkIfFaceExist();
 
-    if(faceExist){
+    if (faceExist) {
       _cameraVerificator = CameraVerificator();
-      _cameraVerificator.startDetectingAndVerifyFace(context);
+      _cameraVerificator.startDetectingAndVerifyFace(unblock);
     }
   }
 
   // Set password to empty string after user press enter button
-  void resetPassword(){
+  void resetPassword() {
     setState(() {
       _controller.text = "";
     });
   }
 
-  void setIncorrectPasswordMessage(String text){
+  void setIncorrectPasswordMessage(String text) {
     setState(() {
       _errorMessageIncorrectPassword = text;
     });
   }
 
-  void setPatternMessage(String text){
+  void setPatternMessage(String text) {
     setState(() {
       _errorPatternMessage = text;
     });
   }
 
   // Compare passwords or set new password
-  void controle(String newPassword) async{
+  void controle(String newPassword) async {
     Password password = Password();
     bool passwordExist = await password.checkIfPasswordExist();
 
     //Set password if it doesn't exist
-    if(!passwordExist){
-      if(validatePassword(newPassword)) { // Validate password to set it
+    if (!passwordExist) {
+      if (validatePassword(newPassword)) {
+        // Validate password to set it
         await password.setPassword(password: newPassword); // Set new password
-        Navigator.pushReplacementNamed(context, "/facepage"); // Go back to homepage
-        }
+        Navigator.pushReplacementNamed(
+            context, "/facepage"); // Go back to homepage
+      }
     }
     //Else check if password is correct and show homepage or error message
-    else{
+    else {
       String myPassword = await password.getPassword();
 
-      if (myPassword != _controller.text.hashCode.toString()){
+      if (myPassword != _controller.text.hashCode.toString()) {
         setIncorrectPasswordMessage(passwordPageStrings.enterIncorrectPassword);
-      }
-      else{
+      } else {
+        _cameraVerificator
+            ?.stopVerification(); // If password is correct and camera is streaming
         await unblock();
-        _cameraVerificator?.stopVerification();
-        Navigator.pushReplacementNamed(context, "/homepage");
       }
       resetPassword();
     }
@@ -128,35 +126,36 @@ class _PasswordPageState extends State<PasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            child: MyErrorWidget(),
-            margin: EdgeInsets.only(bottom: 40),
-          ),
-          Center(
-              child: Image(image: AssetImage(_mainImage), height: 212, width: 212,)
-          ),
-          Center(
-            child: passwordField(),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              mainButton(),
-              conditionButton(_buttonText),
-            ],
-          )
-        ],
-      )
-    );
+        body: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          child: MyErrorWidget(),
+          margin: EdgeInsets.only(bottom: 40),
+        ),
+        Center(
+            child: Image(
+          image: AssetImage(_mainImage),
+          height: 212,
+          width: 212,
+        )),
+        Center(
+          child: passwordField(),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            mainButton(),
+            conditionButton(_buttonText),
+          ],
+        )
+      ],
+    ));
   }
 
-
-  Widget passwordField(){
+  Widget passwordField() {
     return Container(
-      margin: EdgeInsets.only(top:15, left: 20, right: 20),
+      margin: EdgeInsets.only(top: 15, left: 20, right: 20),
       //color: Colors.blue,
       child: PasswordField(
         controller: _controller,
@@ -167,49 +166,57 @@ class _PasswordPageState extends State<PasswordPage> {
             borderSide: BorderSide(width: 1, color: Colors.blue[200])),
         errorFocusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20),
-            borderSide: BorderSide(width: 1, color: Colors.red[400])) ,
+            borderSide: BorderSide(width: 1, color: Colors.red[400])),
         pattern: _pattern,
         errorMessage: _errorPatternMessage,
       ),
     );
   }
 
-
-  Widget mainButton(){
+  Widget mainButton() {
     return Container(
       margin: EdgeInsets.only(top: 15),
       height: 50.0,
       child: RaisedButton(
-        onPressed: (){
+        onPressed: () {
           controle(_controller.text);
         },
-        padding: EdgeInsets.only(left: 15.0, right: 15.0, top: 10.0, bottom: 10.0),
+        padding:
+            EdgeInsets.only(left: 15.0, right: 15.0, top: 10.0, bottom: 10.0),
         color: Colors.blue[300],
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-        child: Text(_buttonText, style: TextStyle(fontSize: 24, color: Colors.white),),
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+        child: Text(
+          _buttonText,
+          style: TextStyle(fontSize: 24, color: Colors.white),
+        ),
       ),
     );
   }
 
-  Widget conditionButton(String buttonText){
-    if(buttonText == "Enter"){
+  Widget conditionButton(String buttonText) {
+    if (buttonText == "Enter") {
       return Container(
         height: 50,
         margin: EdgeInsets.only(left: 5.0, top: 20.0),
         child: FloatingActionButton(
-          child: Icon(Icons.face, size: 35,),
+          child: Icon(
+            Icons.face,
+            size: 35,
+          ),
           onPressed: verifyFace,
           backgroundColor: Colors.blue[300],
         ),
       );
-    }
-    else{
-      return SizedBox(height: 0,);
+    } else {
+      return SizedBox(
+        height: 0,
+      );
     }
   }
 
-  Widget MyErrorWidget(){
-    if(_errorMessageIncorrectPassword != ""){
+  Widget MyErrorWidget() {
+    if (_errorMessageIncorrectPassword != "") {
       return SafeArea(
         child: Container(
           color: Colors.amberAccent,
@@ -221,11 +228,11 @@ class _PasswordPageState extends State<PasswordPage> {
                   padding: EdgeInsets.only(right: 8.0),
                   child: Icon(Icons.error_outline)),
               Expanded(
-                child: Text(_errorMessageIncorrectPassword) ,
+                child: Text(_errorMessageIncorrectPassword),
               ),
               IconButton(
                   icon: Icon(Icons.close),
-                  onPressed: (){
+                  onPressed: () {
                     setState(() {
                       _errorMessageIncorrectPassword = "";
                     });
@@ -234,11 +241,10 @@ class _PasswordPageState extends State<PasswordPage> {
           ),
         ),
       );
-    }
-    else{
-      return SizedBox(height: 0,);
+    } else {
+      return SizedBox(
+        height: 0,
+      );
     }
   }
-
 }
-

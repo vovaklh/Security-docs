@@ -1,19 +1,19 @@
 import 'package:security_docs/utils/fileUtils.dart';
 import 'dart:io';
 
-class Password{
+class Password {
   String _password;
 
   // Return true if file with password exists in directory
-  Future<bool> checkIfPasswordExist() async{
+  Future<bool> checkIfPasswordExist() async {
     String localPath = await getLocalPath();
 
     return File(localPath + "/" + "password.txt").existsSync();
   }
 
   // Set password if it does not exist
-  setPassword({String password}) async{
-    String path =  await getLocalPath();
+  setPassword({String password}) async {
+    String path = await getLocalPath();
     this._password = password.hashCode.toString();
 
     File(path + "/" + "password.txt").writeAsStringSync(this._password);

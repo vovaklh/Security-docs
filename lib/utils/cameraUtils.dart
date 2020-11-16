@@ -38,8 +38,8 @@ imutils.Image convertCameraImage(CameraImage image, CameraLensDirection _dir) {
 // get all cameras description on device
 Future<CameraDescription> getCamera(CameraLensDirection dir) async {
   return await availableCameras().then(
-        (List<CameraDescription> cameras) => cameras.firstWhere(
-          (CameraDescription camera) => camera.lensDirection == dir,
+    (List<CameraDescription> cameras) => cameras.firstWhere(
+      (CameraDescription camera) => camera.lensDirection == dir,
     ),
   );
 }
