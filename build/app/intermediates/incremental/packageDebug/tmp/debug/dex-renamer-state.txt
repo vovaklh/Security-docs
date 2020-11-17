@@ -1,4 +1,4 @@
-#Mon Nov 16 10:29:53 EET 2020
+#Tue Nov 17 17:36:21 EET 2020
 base.2=D\:\\Android_projects\\security_docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_0.dex
 base.1=D\:\\Android_projects\\security_docs\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
 base.0=D\:\\Android_projects\\security_docs\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex

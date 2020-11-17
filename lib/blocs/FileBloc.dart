@@ -13,8 +13,6 @@ class FileBloc extends BlocBase {
     _fileStreamController = StreamController();
     _files = List<CustomFile>();
     _fileStreamController.add(_files);
-
-    addFile();
   }
 
   @override

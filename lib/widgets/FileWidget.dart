@@ -33,7 +33,7 @@ Widget fileWidget({String filePath, String fileName, String fileExtension}) {
               child: RaisedButton(
                 padding: EdgeInsets.all(5.0),
                 onPressed: () {
-                  openFile(filePath: filePath, fileName: fileName);
+                  openFile(filePath: filePath);
                 },
                 child: Text("Open"),
                 color: Colors.grey[100],

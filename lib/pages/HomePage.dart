@@ -1,25 +1,43 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:security_docs/widgets/FileWidget.dart';
 import 'package:security_docs/widgets/PopUpButton.dart';
 import 'package:security_docs/logics/Strings.dart' show homePageStrings;
 import 'package:security_docs/blocs/FileBloc.dart';
+import 'package:security_docs/utils/fileUtils.dart';
 
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
   final _bloc = BlocProvider.getBloc<FileBloc>();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    _bloc.addFile();
+    WidgetsBinding.instance.addObserver(this);
+
+    super.initState();
+  }
 
   @override
   void dispose() {
     _bloc?.dispose();
-    print("disposed");
+    WidgetsBinding.instance.removeObserver(this);
+
     super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if(state == AppLifecycleState.resumed){
+      // user returned to our app
+      deleteAllEncrypted();
+    }
   }
 
   @override

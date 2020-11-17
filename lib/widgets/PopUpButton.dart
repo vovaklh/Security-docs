@@ -1,8 +1,26 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:security_docs/utils/fileUtils.dart';
 import 'package:security_docs/logics/Password.dart';
+import 'package:path/path.dart';
 
 enum MenuOption { addFace, addFile }
+
+Future<void> moveAndAddFile(Function function) async {
+  String pathTo = await getExternalPath();
+  getOtherFilePath().then((path) {
+    if (path != null) {
+      String fileName = basename(path);
+      String newPath = pathTo + "/" + fileName + '.aes';
+
+      Map mapPath = Map();
+      mapPath['oldPath'] = path;
+      mapPath['newPath'] = newPath;
+
+      compute(encryptFile, mapPath).then((value) => function());
+    }
+  });
+}
 
 void choiceAction(MenuOption choice, BuildContext context, Function function) {
   if (choice == MenuOption.addFace) {
@@ -12,14 +30,7 @@ void choiceAction(MenuOption choice, BuildContext context, Function function) {
       }
     });
   } else if (choice == MenuOption.addFile) {
-    Future<String> path = getOtherFilePath();
-    path.then((value) {
-      if (value != null) {
-        // If user choose file
-        moveFile(value);
-        function();
-      }
-    });
+    moveAndAddFile(function);
   }
 }
 
