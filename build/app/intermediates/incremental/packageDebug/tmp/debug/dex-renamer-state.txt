@@ -1,7 +1,7 @@
-#Tue Nov 17 17:36:21 EET 2020
-base.2=D\:\\Android_projects\\security_docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_0.dex
-base.1=D\:\\Android_projects\\security_docs\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
-base.0=D\:\\Android_projects\\security_docs\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+#Thu Nov 19 16:40:46 EET 2020
+base.2=D\:\\Android_projects\\Security-docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_0.dex
+base.1=D\:\\Android_projects\\Security-docs\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.0=D\:\\Android_projects\\Security-docs\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
 path.9=classes_7.dex
 path.8=classes_6.dex
 path.7=classes_5.dex
@@ -25,13 +25,13 @@ renamed.0=classes.dex
 renamed.11=classes12.dex
 renamed.10=classes11.dex
 path.11=classes_9.dex
-base.11=D\:\\Android_projects\\security_docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_9.dex
+base.11=D\:\\Android_projects\\Security-docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_9.dex
 path.10=classes_8.dex
-base.10=D\:\\Android_projects\\security_docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_8.dex
-base.9=D\:\\Android_projects\\security_docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_7.dex
-base.8=D\:\\Android_projects\\security_docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_6.dex
-base.7=D\:\\Android_projects\\security_docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_5.dex
-base.6=D\:\\Android_projects\\security_docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_4.dex
-base.5=D\:\\Android_projects\\security_docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_3.dex
-base.4=D\:\\Android_projects\\security_docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_2.dex
-base.3=D\:\\Android_projects\\security_docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_1.dex
+base.10=D\:\\Android_projects\\Security-docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_8.dex
+base.9=D\:\\Android_projects\\Security-docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_7.dex
+base.8=D\:\\Android_projects\\Security-docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_6.dex
+base.7=D\:\\Android_projects\\Security-docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_5.dex
+base.6=D\:\\Android_projects\\Security-docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_4.dex
+base.5=D\:\\Android_projects\\Security-docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_3.dex
+base.4=D\:\\Android_projects\\Security-docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_2.dex
+base.3=D\:\\Android_projects\\Security-docs\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_1.dex
