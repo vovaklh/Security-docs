@@ -26,7 +26,7 @@ void choiceAction(MenuOption choice, BuildContext context, Function function) {
   if (choice == MenuOption.addFace) {
     Password().checkIfPasswordExist().then((passwordExist) {
       if (!passwordExist) {
-        Navigator.pushReplacementNamed(context, "/passwordpage");
+        Navigator.pushReplacementNamed(context, "/passwordSettingPage");
       }
     });
   } else if (choice == MenuOption.addFile) {

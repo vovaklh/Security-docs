@@ -126,31 +126,32 @@ class _PasswordPageState extends State<PasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          child: MyErrorWidget(),
-          margin: EdgeInsets.only(bottom: 40),
-        ),
-        Center(
-            child: Image(
-          image: AssetImage(_mainImage),
-          height: 212,
-          width: 212,
-        )),
-        Center(
-          child: passwordField(),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            mainButton(),
-            conditionButton(_buttonText),
-          ],
-        )
-      ],
-    ));
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            child: MyErrorWidget(),
+            margin: EdgeInsets.only(bottom: 40),
+          ),
+          Center(
+              child: Image(
+            image: AssetImage(_mainImage),
+            height: 212,
+            width: 212,
+          )),
+          Center(
+            child: passwordField(),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              mainButton(),
+              conditionButton(_buttonText),
+            ],
+          )
+        ],
+      ),
+    );
   }
 
   Widget passwordField() {
