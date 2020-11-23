@@ -4,8 +4,7 @@ import 'dart:math';
 import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 
 // Convert imutils.image to float list
-Float32List imageToByteListFloat32(
-    imutils.Image image, int inputSize, double mean, double std) {
+Float32List imageToByteListFloat32(imutils.Image image, int inputSize, double mean, double std) {
   var convertedBytes = Float32List(1 * inputSize * inputSize * 3);
   var buffer = Float32List.view(convertedBytes.buffer);
   int pixelIndex = 0;

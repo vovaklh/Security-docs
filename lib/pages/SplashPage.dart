@@ -1,27 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:security_docs/logics/Password.dart';
+import 'package:flutter_gifimage/flutter_gifimage.dart';
 
 class SplashPage extends StatefulWidget {
   @override
   _SplashPageState createState() => _SplashPageState();
 }
 
-class _SplashPageState extends State<SplashPage> {
+class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
+  final double _animateTo = 63.0;
+  final int _timeOfDuration = 3000;
+  GifController _gifController;
+
   @override
   void initState() {
     // TODO: implement initState
-    goToNextPage();
     super.initState();
+    _gifController = GifController(vsync: this);
+    _gifController
+        .animateTo(_animateTo, duration: Duration(milliseconds: _timeOfDuration))
+        .then((value) => goToNextPage());
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _gifController.dispose();
   }
 
   Future<void> goToNextPage() async {
     bool passwordExist = await Password().checkIfPasswordExist();
-    Future.delayed(Duration(seconds: 3)).then((value) {
-      if (passwordExist)
-        Navigator.pushReplacementNamed(context, "/passwordEnteringPage");
-      else
-        Navigator.pushReplacementNamed(context, "/homepage");
-    });
+
+    if (passwordExist)
+      Navigator.pushReplacementNamed(context, "/passwordEnteringPage");
+    else
+      Navigator.pushReplacementNamed(context, "/homepage");
   }
 
   @override
@@ -33,9 +46,9 @@ class _SplashPageState extends State<SplashPage> {
 
   Widget mainImage() {
     return Center(
-      child: Image(
-        image: AssetImage("assets/images/animation.gif"),
-      ),
-    );
+        child: GifImage(
+      image: AssetImage("assets/images/animation.gif"),
+      controller: _gifController,
+    ));
   }
 }

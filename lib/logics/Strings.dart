@@ -26,3 +26,24 @@ class passwordPageStrings {
       "Password must contain at least 1 alphabet and 1 digit";
   static const enterIncorrectPassword = "Incorrect password";
 }
+
+class passwordSettingPageStrings {
+  passwordSettingPageStrings._();
+
+  static const pattern = r"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$";
+  static const buttonText = "Set";
+  static const passwordDoesntMatchPattern =
+      "Password must contain at least 1 alphabet and 1 digit";
+  static const pathToImage = "assets/images/lock.png";
+}
+
+class passwordEnteringPageStrings {
+  passwordEnteringPageStrings._();
+
+  static const buttonText = "Enter";
+  static const pathToGif = "assets/images/unlock.gif";
+  static const pathToSound = "assets/sounds/";
+  static const soundName = "unlock.mp3";
+  static const incorrectPasswordMessage = "Incorrect password";
+  static const titleOfDialog = "Error";
+}

@@ -6,7 +6,7 @@ import 'package:path/path.dart';
 
 enum MenuOption { addFace, addFile }
 
-Future<void> moveAndAddFile(Function function) async {
+Future<void> moveAndAddFile(Function addFile) async {
   String pathTo = await getExternalPath();
   getOtherFilePath().then((path) {
     if (path != null) {
@@ -17,12 +17,12 @@ Future<void> moveAndAddFile(Function function) async {
       mapPath['oldPath'] = path;
       mapPath['newPath'] = newPath;
 
-      compute(encryptFile, mapPath).then((value) => function());
+      compute(encryptFile, mapPath).then((value) => addFile());
     }
   });
 }
 
-void choiceAction(MenuOption choice, BuildContext context, Function function) {
+void choiceAction(MenuOption choice, BuildContext context, Function addFile) {
   if (choice == MenuOption.addFace) {
     Password().checkIfPasswordExist().then((passwordExist) {
       if (!passwordExist) {
@@ -30,7 +30,7 @@ void choiceAction(MenuOption choice, BuildContext context, Function function) {
       }
     });
   } else if (choice == MenuOption.addFile) {
-    moveAndAddFile(function);
+    moveAndAddFile(addFile);
   }
 }
 

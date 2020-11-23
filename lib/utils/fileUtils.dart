@@ -90,8 +90,7 @@ Future<void> encryptFile(Map pathMap) {
 Future<void> deleteAllEncrypted() async {
   String path = await getExternalPath();
 
-  List<String> allFiles =
-  io.Directory("$path").listSync().map((e) => e.path).toList();
+  List<String> allFiles = io.Directory("$path").listSync().map((e) => e.path).toList();
   for (String i in allFiles) {
     if (extension(i) != '.aes' && extension(i) != "") io.File(i).delete();
   }

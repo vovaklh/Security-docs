@@ -17,7 +17,6 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
 
   @override
   void initState() {
-    // TODO: implement initState
     _bloc.addFile();
     WidgetsBinding.instance.addObserver(this);
 
@@ -35,7 +34,6 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if(state == AppLifecycleState.resumed){
-      // user returned to our app
       deleteAllEncrypted();
     }
   }
@@ -47,8 +45,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
         title: Text(homePageStrings.title),
       ),
       body: userDocuments(),
-      floatingActionButton: popupButton(
-          context, _bloc.addFile), //Create popupbutton in right bottom side
+      floatingActionButton: popupButton(context, _bloc.addFile),
     );
   }
 
