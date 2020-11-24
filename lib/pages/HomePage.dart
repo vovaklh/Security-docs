@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    if(state == AppLifecycleState.resumed){
+    if (state == AppLifecycleState.resumed) {
       deleteAllEncrypted();
     }
   }
@@ -52,17 +52,14 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
   Widget userDocuments() {
     return StreamBuilder(
         stream: _bloc.fileStream,
-        builder: (BuildContext ctx, AsyncSnapshot snapshot) {
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (snapshot.data == null) {
-            // Show progress indicator if we got null
             return Center(child: CircularProgressIndicator());
           } else if (snapshot.data.length == 0) {
-            //Show that user has no files
             return emptyDocuments();
           } else {
             return SafeArea(
               child: ListView.builder(
-                  // Else create ListView with files
                   scrollDirection: Axis.vertical,
                   padding: EdgeInsets.only(top: 5.0),
                   itemCount: snapshot.data.length,
@@ -71,6 +68,8 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                       filePath: snapshot.data[index].filePath,
                       fileName: snapshot.data[index].fileName,
                       fileExtension: snapshot.data[index].fileExtension,
+                      showDialog: showLoadingAlertDialog,
+                      closeDialog: closeLoadingAlertDialog
                     );
                   }),
             );
@@ -88,5 +87,29 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
         ),
       ),
     );
+  }
+
+  void showLoadingAlertDialog() {
+    loadingAlertDialog(context);
+  }
+
+  void closeLoadingAlertDialog() {
+    Navigator.of(context).pop();
+  }
+
+  loadingAlertDialog(BuildContext context) {
+    return showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(homePageStrings.titleOfDialog),
+            content: Image(
+              image: AssetImage(homePageStrings.pathToGif),
+              height: 50,
+              width: 50,
+            ),
+          );
+        });
   }
 }

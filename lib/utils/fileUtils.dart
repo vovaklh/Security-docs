@@ -8,11 +8,6 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:path/path.dart';
 import 'package:aes_crypt/aes_crypt.dart';
 
-// Open file on device
-Future<void> openFile({String filePath}) async {
-  compute(decryptFile, filePath).then((newPath) => OpenFile.open(newPath));
-}
-
 // Return the path of external storage
 Future<String> getExternalPath() async {
   var dir = await getExternalStorageDirectory();
