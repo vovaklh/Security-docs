@@ -1,9 +1,9 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
-import 'package:security_docs/pages/HomePage.dart';
-import 'package:security_docs/pages/FacePage.dart';
-import 'package:security_docs/pages/SplashPage.dart';
-import 'package:security_docs/blocs/FileBloc.dart';
+import 'package:security_docs/pages/home_page.dart';
+import 'package:security_docs/pages/face_page.dart';
+import 'package:security_docs/pages/splash_page.dart';
+import 'package:security_docs/blocs/file_bloc.dart';
 import 'package:security_docs/pages/password_entering_page.dart';
 import 'package:security_docs/pages/password_setting_page.dart';
 
@@ -14,14 +14,14 @@ void main() {
         Bloc((i) => FileBloc(), singleton: false),
       ],
       child: MaterialApp(
-        initialRoute: "/splashpage",
+        initialRoute: "/splash_page",
         debugShowCheckedModeBanner: false,
         routes: {
-          "/homepage": (_) => new HomePage(),
-          "/passwordEnteringPage": (_) => new PasswordEnteringPage(),
-          "/passwordSettingPage": (_) => new PasswordSettingPage(),
-          "/splashpage": (_) => new SplashPage(),
-          '/facepage': (_) => new FacePage()
+          "/home_page": (_) => new HomePage(),
+          "/password_entering_page": (_) => new PasswordEnteringPage(),
+          "/password_setting_page": (_) => new PasswordSettingPage(),
+          "/splash_page": (_) => new SplashPage(),
+          '/face_page': (_) => new FacePage()
         },
       ),
     ),

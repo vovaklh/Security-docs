@@ -2,7 +2,7 @@ import 'package:camera/camera.dart';
 import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 import 'package:image/image.dart' as imutils;
 
-// convert camera image to imutils.Image
+/// Convert instance of CameraImage to imutils.Image instance
 imutils.Image convertCameraImage(CameraImage image, CameraLensDirection _dir) {
   int width = image.width;
   int height = image.height;
@@ -35,7 +35,7 @@ imutils.Image convertCameraImage(CameraImage image, CameraLensDirection _dir) {
   return img1;
 }
 
-// get all cameras description on device
+/// Get description of all cameras on device
 Future<CameraDescription> getCamera(CameraLensDirection dir) async {
   return await availableCameras().then(
     (List<CameraDescription> cameras) => cameras.firstWhere(
@@ -44,7 +44,7 @@ Future<CameraDescription> getCamera(CameraLensDirection dir) async {
   );
 }
 
-// define image rotation
+/// Define the rotation of image
 ImageRotation rotationIntToImageRotation(int rotation) {
   switch (rotation) {
     case 0:

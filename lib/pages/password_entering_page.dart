@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:passwordfield/passwordfield.dart';
-import 'package:security_docs/logics/Password.dart';
+import 'package:security_docs/logics/password.dart';
 import 'package:audioplayers/audio_cache.dart';
-import 'package:security_docs/logics/FaceVerificator.dart';
-import 'package:security_docs/logics/CameraVerificator.dart';
-import 'package:security_docs/logics/Strings.dart';
+import 'package:security_docs/logics/face_verificator.dart';
+import 'package:security_docs/logics/camera_verificator.dart';
+import 'package:security_docs/resources/strings.dart';
 import 'package:flutter_gifimage/flutter_gifimage.dart';
 
 class PasswordEnteringPage extends StatefulWidget {
@@ -34,18 +34,20 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
     super.dispose();
   }
 
+  /// Play sound and start animation
   Future<void> unlock() async {
-    final player = AudioCache(prefix: passwordEnteringPageStrings.pathToSound);
+    final player = AudioCache(prefix: PasswordEnteringPageStrings.pathToSound);
     Future.delayed(Duration(milliseconds: _timeOfSoundDuration))
-        .then((value) => player.play(passwordEnteringPageStrings.soundName));
+        .then((value) => player.play(PasswordEnteringPageStrings.soundName));
     _gifController
         .animateTo(_animateTo,
             duration: Duration(milliseconds: _timeOfGifDuration))
         .then((value) {
-      Navigator.pushReplacementNamed(context, "/homepage");
+      Navigator.pushReplacementNamed(context, "/home_page");
     });
   }
 
+  /// Start verifying faces
   Future<void> verifyFace() async {
     FaceVerificator faceVerificator = FaceVerificator();
     bool faceExist = await faceVerificator.checkIfFaceExist();
@@ -53,15 +55,19 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
     if (faceExist) {
       _cameraVerificator = CameraVerificator();
       _cameraVerificator.startDetectingAndVerifyFace(unlock);
+    } else {
+      faceDoesNotExistAlertDialog(context);
     }
   }
 
+  /// Reset password to empty string
   void resetPassword() {
     setState(() {
       _controller.text = "";
     });
   }
 
+  /// Check if password exist and then compare password user input
   void checkPassword(String newPassword) async {
     Password password = Password();
     String myPassword = await password.getPassword();
@@ -82,12 +88,8 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-              child: GifImage(
-            image: AssetImage(passwordEnteringPageStrings.pathToGif),
-            controller: _gifController,
-            height: 250,
-            width: 250,
-          )),
+            child: padlockGif(),
+          ),
           Center(
             child: passwordField(),
           ),
@@ -103,6 +105,17 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
     );
   }
 
+  /// Return the gif of padlock
+  Widget padlockGif() {
+    return GifImage(
+      image: AssetImage(PasswordEnteringPageStrings.pathToGif),
+      controller: _gifController,
+      height: 250,
+      width: 250,
+    );
+  }
+
+  /// Return the password filed
   Widget passwordField() {
     return Container(
       margin: EdgeInsets.only(top: 15, left: 20, right: 20),
@@ -120,6 +133,7 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
     );
   }
 
+  /// Return button to input password
   Widget inputPasswordButton() {
     return Container(
       margin: EdgeInsets.only(top: 15),
@@ -134,13 +148,14 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
         child: Text(
-          passwordEnteringPageStrings.buttonText,
+          PasswordEnteringPageStrings.buttonText,
           style: TextStyle(fontSize: 24, color: Colors.white),
         ),
       ),
     );
   }
 
+  /// Return button to verify face
   Widget verifyFaceButton() {
     return Container(
       height: 50,
@@ -156,13 +171,34 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
     );
   }
 
+  /// Show message that password is incorrect
   incorrectPasswordAlertDialog(BuildContext context) {
     return showDialog(
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text(passwordEnteringPageStrings.titleOfDialog),
-            content: Text(passwordEnteringPageStrings.incorrectPasswordMessage),
+            title: Text(PasswordEnteringPageStrings.titleOfDialog),
+            content: Text(PasswordEnteringPageStrings.incorrectPasswordMessage),
+            actions: [
+              FlatButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text("OK"),
+              ),
+            ],
+          );
+        });
+  }
+
+  /// Show message that user doesn't add face
+  faceDoesNotExistAlertDialog(BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(PasswordEnteringPageStrings.titleOfDialog),
+            content: Text(PasswordEnteringPageStrings.faceDoesNotExistMessage),
             actions: [
               FlatButton(
                 onPressed: () {

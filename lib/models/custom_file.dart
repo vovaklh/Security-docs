@@ -3,10 +3,13 @@ class CustomFile {
   String _fileName;
   String _fileExtension;
 
+  /// Get the file path
   String get filePath => _filePath;
 
+  /// Get the filename
   String get fileName => _fileName;
 
+  /// Get the file extension
   String get fileExtension => _fileExtension;
 
   CustomFile({String filePath, String fileName, String fileExtension}) {
@@ -15,6 +18,8 @@ class CustomFile {
     this._fileExtension = fileExtension;
   }
 
+
+  /// Compare two files
   bool operator ==(other) {
     if (this._filePath == other.filePath &&
         this._fileName == other.fileName &&

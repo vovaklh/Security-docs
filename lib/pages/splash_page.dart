@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:security_docs/logics/Password.dart';
+import 'package:security_docs/logics/password.dart';
 import 'package:flutter_gifimage/flutter_gifimage.dart';
-import 'package:security_docs/utils/fileUtils.dart';
+import 'package:security_docs/utils/file_utils.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -29,29 +29,32 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
     _gifController.dispose();
   }
 
+  /// Go to passwordEnteringPage if password exist
+  /// else navigate to passwordSetting page
   Future<void> goToNextPage() async {
     bool passwordExist = await Password().checkIfPasswordExist();
 
     if (passwordExist)
-      Navigator.pushReplacementNamed(context, "/passwordEnteringPage");
+      Navigator.pushReplacementNamed(context, "/password_entering_page");
     else {
       deleteAllFiles();
-      Navigator.pushReplacementNamed(context, "/passwordSettingPage");
+      Navigator.pushReplacementNamed(context, "/password_setting_page");
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: mainImage(),
+      body: loadingImage(),
     );
   }
 
-  Widget mainImage() {
+  Widget loadingImage() {
     return Center(
-        child: GifImage(
-      image: AssetImage("assets/images/animation.gif"),
-      controller: _gifController,
-    ));
+      child: GifImage(
+        image: AssetImage("assets/images/animation.gif"),
+        controller: _gifController,
+      ),
+    );
   }
 }

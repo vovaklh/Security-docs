@@ -1,14 +1,15 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:security_docs/utils/fileUtils.dart';
-import 'package:security_docs/logics/FaceVerificator.dart';
+import 'package:security_docs/utils/file_utils.dart';
+import 'package:security_docs/logics/face_verificator.dart';
 import 'package:path/path.dart';
 
 enum MenuOption { addFace, addFile }
 
+/// Encrypt the chosen file and added it to stream
 Future<void> moveAndAddFile(Function addFile) async {
   String pathTo = await getExternalPath();
-  getOtherFilePath().then((path) {
+  getPathOfNewFile().then((path) {
     if (path != null) {
       String fileName = basename(path);
       String newPath = pathTo + "/" + fileName + '.aes';
@@ -22,18 +23,20 @@ Future<void> moveAndAddFile(Function addFile) async {
   });
 }
 
-void choiceAction(MenuOption choice, BuildContext context, Function addFile) {
+/// Function to controle user choice
+void choiceAction(MenuOption choice, Function goToFacePage, Function addFile) {
   if (choice == MenuOption.addFace) {
     FaceVerificator faceVerificator = FaceVerificator();
     faceVerificator.checkIfFaceExist().then((faceExist) {
-      if (!faceExist) Navigator.pushReplacementNamed(context, "/facepage");
+      if (!faceExist) goToFacePage();
     });
   } else if (choice == MenuOption.addFile) {
     moveAndAddFile(addFile);
   }
 }
 
-Widget popupButton(BuildContext context, Function function) {
+/// Button to add file or face
+Widget addFaceAndFileButton(Function goToFacePage, Function addFile) {
   return Container(
     height: 50,
     width: 50,
@@ -42,7 +45,7 @@ Widget popupButton(BuildContext context, Function function) {
       color: Colors.blue,
     ),
     child: PopupMenuButton(
-        onSelected: (choice) => choiceAction(choice, context, function),
+        onSelected: (choice) => choiceAction(choice, goToFacePage, addFile),
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
         icon: Icon(
@@ -59,6 +62,7 @@ Widget popupButton(BuildContext context, Function function) {
   );
 }
 
+/// Return item of popupbutton
 Widget buttonItem(MenuOption name, String text, IconData icon) {
   return PopupMenuItem(
     child: Row(

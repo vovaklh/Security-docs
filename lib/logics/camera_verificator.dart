@@ -1,10 +1,10 @@
 import 'package:camera/camera.dart';
 import 'package:firebase_ml_vision/firebase_ml_vision.dart';
-import 'package:security_docs/utils/cameraUtils.dart';
-import 'package:security_docs/logics/MyFaceDetector.dart';
-import 'package:security_docs/logics/FaceVerificator.dart';
+import 'package:security_docs/utils/camera_utils.dart';
+import 'package:security_docs/logics/my_face_detector.dart';
+import 'package:security_docs/logics/face_verificator.dart';
 import 'package:image/image.dart' as imutils;
-import 'package:security_docs/utils/faceUtils.dart';
+import 'package:security_docs/utils/face_utils.dart';
 
 class CameraVerificator {
   CameraController _cameraController;
@@ -13,6 +13,7 @@ class CameraVerificator {
   bool _faceVerified = false;
   FaceVerificator _faceVerificator;
 
+  /// Stop image streaming
   Future<void> stopVerification() async {
     if (_cameraController.value.isStreamingImages) {
       _cameraController.stopImageStream();
@@ -24,7 +25,8 @@ class CameraVerificator {
     _faceVerificator?.closeInterpreter();
   }
 
-  Future<void> startDetectingAndVerifyFace(Function function) async {
+  /// Start verifying faces and run function if face was verified
+  Future<void> startDetectingAndVerifyFace(Function unlock) async {
     MyFaceDetector myFaceDetector = MyFaceDetector();
     _faceVerificator = FaceVerificator();
     await _faceVerificator.loadModel(modelPath: "models/mobilefacenet.tflite");
@@ -56,7 +58,7 @@ class CameraVerificator {
       } else {
         if (_cameraController.value.isStreamingImages) {
           _cameraController.stopImageStream();
-          await function();
+          await unlock();
         }
       }
     });

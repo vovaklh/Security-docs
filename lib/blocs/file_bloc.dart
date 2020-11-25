@@ -1,12 +1,13 @@
 import 'dart:async';
 import 'package:bloc_pattern/bloc_pattern.dart';
-import 'package:security_docs/models/CustomFile.dart';
-import 'package:security_docs/utils/fileUtils.dart';
+import 'package:security_docs/models/custom_file.dart';
+import 'package:security_docs/utils/file_utils.dart';
 
 class FileBloc extends BlocBase {
   StreamController _fileStreamController;
   List<CustomFile> _files;
 
+  /// Give access to stream
   Stream get fileStream => _fileStreamController.stream;
 
   FileBloc() {
@@ -21,6 +22,8 @@ class FileBloc extends BlocBase {
     super.dispose();
   }
 
+  /// Load files from external storage and add them fo list.
+  /// Then list is added to stream
   Future<void> addFile() async {
     List<CustomFile> newFiles = await loadFiles();
     if (newFiles.length > _files.length) {

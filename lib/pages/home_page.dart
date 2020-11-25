@@ -1,11 +1,11 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:security_docs/widgets/FileWidget.dart';
-import 'package:security_docs/widgets/PopUpButton.dart';
-import 'package:security_docs/logics/Strings.dart';
-import 'package:security_docs/blocs/FileBloc.dart';
-import 'package:security_docs/utils/fileUtils.dart';
+import 'package:security_docs/widgets/file_widget.dart';
+import 'package:security_docs/widgets/add_face_and_file_button.dart';
+import 'package:security_docs/resources/strings.dart';
+import 'package:security_docs/blocs/file_bloc.dart';
+import 'package:security_docs/utils/file_utils.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -42,13 +42,14 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(homePageStrings.title),
+        title: Text(HomePageStrings.title),
       ),
       body: userDocuments(),
-      floatingActionButton: popupButton(context, _bloc.addFile),
+      floatingActionButton: addFaceAndFileButton(goToFacePage, _bloc.addFile),
     );
   }
 
+  /// Return StreamBuilder of user files
   Widget userDocuments() {
     return StreamBuilder(
         stream: _bloc.fileStream,
@@ -65,22 +66,22 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                   itemCount: snapshot.data.length,
                   itemBuilder: (BuildContext context, int index) {
                     return fileWidget(
-                      filePath: snapshot.data[index].filePath,
-                      fileName: snapshot.data[index].fileName,
-                      fileExtension: snapshot.data[index].fileExtension,
-                      showDialog: showLoadingAlertDialog,
-                      closeDialog: closeLoadingAlertDialog
-                    );
+                        filePath: snapshot.data[index].filePath,
+                        fileName: snapshot.data[index].fileName,
+                        fileExtension: snapshot.data[index].fileExtension,
+                        showDialog: showLoadingAlertDialog,
+                        closeDialog: closeLoadingAlertDialog);
                   }),
             );
           }
         });
   }
 
+  /// Return the text which signalize that user have no files
   Widget emptyDocuments() {
     return Center(
       child: Text(
-        homePageStrings.emptyDocuments,
+        HomePageStrings.emptyDocuments,
         style: TextStyle(
           fontSize: 20,
           color: Colors.grey[300],
@@ -89,12 +90,18 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
     );
   }
 
+  /// Show the loadingAlert dialog when file is decrypting
   void showLoadingAlertDialog() {
     loadingAlertDialog(context);
   }
 
+  /// Close the loadingAlert dialog when file is decrypted
   void closeLoadingAlertDialog() {
     Navigator.of(context).pop();
+  }
+
+  void goToFacePage() {
+    Navigator.pushReplacementNamed(context, "/face_page");
   }
 
   loadingAlertDialog(BuildContext context) {
@@ -103,9 +110,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
         barrierDismissible: false,
         builder: (context) {
           return AlertDialog(
-            title: Text(homePageStrings.titleOfDialog),
+            title: Text(HomePageStrings.titleOfDialog),
             content: Image(
-              image: AssetImage(homePageStrings.pathToGif),
+              image: AssetImage(HomePageStrings.pathToGif),
               height: 50,
               width: 50,
             ),

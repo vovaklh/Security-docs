@@ -1,9 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:security_docs/utils/fileUtils.dart';
-import 'package:security_docs/icons/CustomIcons.dart';
+import 'package:security_docs/utils/file_utils.dart';
+import 'package:security_docs/icons/custom_icons.dart';
 import 'package:open_file/open_file.dart';
 
+/// Open file when it is decrypted
 Future<void> openFile({String filePath, Function showDialog, Function closeDialog}) {
   showDialog();
   compute(decryptFile, filePath).then((newPath) {

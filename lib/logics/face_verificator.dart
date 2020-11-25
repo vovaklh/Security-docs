@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'package:image/image.dart' as imutils;
-import 'package:security_docs/utils/faceUtils.dart';
+import 'package:security_docs/utils/face_utils.dart';
 import 'package:tflite_flutter/tflite_flutter.dart' as tf;
-import 'package:security_docs/utils/fileUtils.dart';
+import 'package:security_docs/utils/file_utils.dart';
 
 class FaceVerificator {
   tf.Interpreter _interpreter;
@@ -11,14 +11,18 @@ class FaceVerificator {
   double _mean;
   double _std;
 
-  FaceVerificator({int size = 112, double mean = 128, double std = 128, int outShape = 192}) {
+  FaceVerificator(
+      {int size = 112,
+      double mean = 128,
+      double std = 128,
+      int outShape = 192}) {
     this._size = size;
     this._mean = mean;
     this._std = std;
     this._outShape = outShape;
   }
 
-  // Load model with delegate
+  /// Load model from assets
   Future<bool> loadModel({String modelPath}) async {
     try {
       final gpuDelegateV2 = tf.GpuDelegateV2(
@@ -39,40 +43,35 @@ class FaceVerificator {
     }
   }
 
-  // Return output of facenet model
+  /// Take the image and return the output of facenet model
   List<dynamic> getOutput(imutils.Image face) {
-    // Resize face to 112 height and with
     face = imutils.copyResizeCropSquare(face, _size);
 
-    //Reshape image
     List input = imageToByteListFloat32(face, _size, _mean, _std);
     input = input.reshape([1, _size, _size, 3]);
 
-    //Creating list for otput
     List output = List(1 * _outShape).reshape([1, _outShape]);
     this._interpreter.run(input, output);
 
-    //Reshape otput
     output = output.reshape([_outShape]);
-
     return output;
   }
 
-  // Save encoded vector as String to txt file
+  /// Save encoded face to txt file
   void saveArrayToFile(List vector) async {
     String path = await getLocalPath();
 
     File(path + "/" + "face.txt").writeAsStringSync(vector.toString());
   }
 
-  // Check if encoded face exist if directory
+  /// Check if file with face exist in local storage
   Future<bool> checkIfFaceExist() async {
     String path = await getLocalPath();
 
     return File(path + "/" + "face.txt").existsSync();
   }
 
-  // Return decoded face from file
+  /// Return the encoded face
   Future<List> getFace() async {
     String path = await getLocalPath();
     List face = File(path + "/" + "face.txt")
@@ -85,14 +84,14 @@ class FaceVerificator {
     return face;
   }
 
-  // Return true if euclidean distance between faces is smaller than threshold
+  /// Compute the similarity between faces
   bool sameFaces({List savedFace, List scannedFace, double threshold}) {
     double facesDistance = euclideanDistance(savedFace, scannedFace);
 
     return facesDistance < threshold;
   }
 
-  // Close tflite interpreter
+  /// Close tflite interpreter
   void closeInterpreter() {
     this._interpreter.close();
   }

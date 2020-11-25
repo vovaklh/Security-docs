@@ -10,7 +10,7 @@ class MyFaceDetector {
     this._faceDetector = FirebaseVision.instance.faceDetector();
   }
 
-  // Return list of faces predicted from file
+  /// Return list of faces predicted from file
   Future<List<Face>> predictImageFromFile(File image) async {
     FirebaseVisionImage visionImage = FirebaseVisionImage.fromFile(image);
     List<Face> faces = await _faceDetector.processImage(visionImage);
@@ -18,9 +18,8 @@ class MyFaceDetector {
     return faces;
   }
 
-  // Return list of faces predicted from bytes
-  Future<List<Face>> predictImageFromBytes(
-      CameraImage image, ImageRotation rotation) async {
+  /// Return list of faces predicted from CameraImage image
+  Future<List<Face>> predictImageFromBytes(CameraImage image, ImageRotation rotation) async {
     FirebaseVisionImage visionImage = FirebaseVisionImage.fromBytes(
         image.planes[0].bytes, buildMetaData(image, rotation));
     List<Face> faces = await _faceDetector.processImage(visionImage);
@@ -28,9 +27,8 @@ class MyFaceDetector {
     return faces;
   }
 
-  // Build metadata of image
-  FirebaseVisionImageMetadata buildMetaData(
-      CameraImage image, ImageRotation rotation) {
+  /// Build metadata of image
+  FirebaseVisionImageMetadata buildMetaData(CameraImage image, ImageRotation rotation) {
     return FirebaseVisionImageMetadata(
       rawFormat: image.format.raw,
       size: Size(image.width.toDouble(), image.height.toDouble()),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:passwordfield/passwordfield.dart';
-import 'package:security_docs/logics/Password.dart';
-import 'package:security_docs/logics/Strings.dart';
+import 'package:security_docs/logics/password.dart';
+import 'package:security_docs/resources/strings.dart';
 
 class PasswordSettingPage extends StatefulWidget {
   @override
@@ -11,9 +11,10 @@ class PasswordSettingPage extends StatefulWidget {
 class _PasswordSettingPageState extends State<PasswordSettingPage> {
   final _controller = TextEditingController();
 
+  /// Chech if password math the pattern
   bool validatePassword(String password) {
     if (password.length >= 8) {
-      if (RegExp(passwordSettingPageStrings.pattern).hasMatch(password)) {
+      if (RegExp(PasswordSettingPageStrings.pattern).hasMatch(password)) {
         return true;
       }
     } else {
@@ -21,6 +22,7 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
     }
   }
 
+  /// Reset password to empty string
   // Set password to empty string after user press enter button
   void resetPassword() {
     setState(() {
@@ -28,12 +30,13 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
     });
   }
 
+  /// Write password to file
   void setPassword(String newPassword) async {
     Password password = Password();
 
     if (validatePassword(newPassword)) {
       await password.setPassword(password: newPassword);
-      Navigator.pushReplacementNamed(context, "/homepage");
+      Navigator.pushReplacementNamed(context, "/home_page");
     }
   }
 
@@ -44,22 +47,29 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-              child: Image(
-            image: AssetImage(passwordSettingPageStrings.pathToImage),
-            height: 212,
-            width: 212,
-          )),
+            child: padlockImage(),
+          ),
           Center(
             child: passwordField(),
           ),
           Center(
-            child: mainButton(),
+            child: setPasswordButton(),
           ),
         ],
       ),
     );
   }
 
+  /// Return the image of padlock
+  Widget padlockImage() {
+    return Image(
+      image: AssetImage(PasswordSettingPageStrings.pathToImage),
+      height: 212,
+      width: 212,
+    );
+  }
+
+  /// Return the password field
   Widget passwordField() {
     return Container(
       margin: EdgeInsets.only(top: 15, left: 20, right: 20),
@@ -73,13 +83,14 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
         errorFocusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20),
             borderSide: BorderSide(width: 1, color: Colors.red[400])),
-        pattern: passwordSettingPageStrings.pattern,
-        errorMessage: passwordSettingPageStrings.passwordDoesntMatchPattern,
+        pattern: PasswordSettingPageStrings.pattern,
+        errorMessage: PasswordSettingPageStrings.passwordDoesntMatchPattern,
       ),
     );
   }
 
-  Widget mainButton() {
+  /// Return button to set password
+  Widget setPasswordButton() {
     return Container(
       margin: EdgeInsets.only(top: 15),
       height: 50.0,
@@ -93,7 +104,7 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
         child: Text(
-          passwordSettingPageStrings.buttonText,
+          PasswordSettingPageStrings.buttonText,
           style: TextStyle(fontSize: 24, color: Colors.white),
         ),
       ),

@@ -3,10 +3,10 @@ import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 import 'package:image/image.dart' as imutils;
-import 'package:security_docs/logics/FaceVerificator.dart';
-import 'package:security_docs/utils/faceUtils.dart';
-import 'package:security_docs/logics/MyFaceDetector.dart';
-import 'package:security_docs/logics/Strings.dart';
+import 'package:security_docs/logics/face_verificator.dart';
+import 'package:security_docs/utils/face_utils.dart';
+import 'package:security_docs/logics/my_face_detector.dart';
+import 'package:security_docs/resources/strings.dart';
 
 class FacePage extends StatefulWidget {
   @override
@@ -15,29 +15,33 @@ class FacePage extends StatefulWidget {
 
 class _FacePageState extends State<FacePage> {
   Image _face;
-  String _text = facePageStrings.initialMessage;
+  String _text = FacePageStrings.initialMessage;
 
+  /// Set status of face detection(no face detected, too many...)
   void setStatus(String text) {
     setState(() {
       this._text = text;
     });
   }
 
+  /// Set state of face page to default
   void setButtonToDefault() {
     setState(() {
       this._face == null;
-      this._text = facePageStrings.imageSelected;
+      this._text = FacePageStrings.initialMessage;
     });
   }
 
+  /// Encode detected face and save to file
   void encodeFace(imutils.Image face) async {
     FaceVerificator faceVerificator = FaceVerificator();
-    await faceVerificator.loadModel(modelPath: "models/mobilefacenet.tflite");
+    await faceVerificator.loadModel(modelPath: FacePageStrings.pathToModel);
     List faceVector = faceVerificator.getOutput(face);
     faceVerificator.saveArrayToFile(faceVector);
     faceVerificator.closeInterpreter();
   }
 
+  /// Detect faces in chosen image
   Future<void> detectFaces() async {
     setButtonToDefault();
 
@@ -49,9 +53,9 @@ class _FacePageState extends State<FacePage> {
     List<Face> faces = await myFaceDetector.predictImageFromFile(image);
 
     if (faces.length == 0) {
-      setStatus(facePageStrings.noFaces);
+      setStatus(FacePageStrings.noFaces);
     } else if (faces.length > 1) {
-      setStatus(facePageStrings.manyFaces);
+      setStatus(FacePageStrings.manyFaces);
     } else {
       imutils.Image croppedFace = cropFace(
           imutils.decodeImage(image.readAsBytesSync()), faces.first, true);
@@ -63,7 +67,7 @@ class _FacePageState extends State<FacePage> {
       encodeFace(croppedFace);
 
       Future.delayed(Duration(seconds: 2)).then(
-          (value) => Navigator.pushReplacementNamed(context, "/homepage"));
+          (value) => Navigator.pushReplacementNamed(context, "/home_page"));
     }
   }
 
@@ -71,16 +75,16 @@ class _FacePageState extends State<FacePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(facePageStrings.title),
+        title: Text(FacePageStrings.title),
       ),
       body: textOrFace(),
       bottomNavigationBar: bottomNavigator(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: mainButton(),
+      floatingActionButton: selectImageButton(),
     );
   }
 
-  // Return image with face or text
+  /// Return text if face was not found else return cropped face
   Widget textOrFace() {
     if (_face == null) {
       return Center(
@@ -101,6 +105,7 @@ class _FacePageState extends State<FacePage> {
     }
   }
 
+  /// Return bottom navigation bar
   Widget bottomNavigator() {
     return BottomAppBar(
       color: Colors.grey[250],
@@ -110,7 +115,8 @@ class _FacePageState extends State<FacePage> {
     );
   }
 
-  Widget mainButton() {
+  /// Return button to choose image on device
+  Widget selectImageButton() {
     return Container(
       height: 65,
       width: 65,
