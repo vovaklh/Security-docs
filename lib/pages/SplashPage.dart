@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:security_docs/logics/Password.dart';
 import 'package:flutter_gifimage/flutter_gifimage.dart';
+import 'package:security_docs/utils/fileUtils.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -14,11 +15,11 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _gifController = GifController(vsync: this);
     _gifController
-        .animateTo(_animateTo, duration: Duration(milliseconds: _timeOfDuration))
+        .animateTo(_animateTo,
+            duration: Duration(milliseconds: _timeOfDuration))
         .then((value) => goToNextPage());
   }
 
@@ -33,8 +34,10 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
 
     if (passwordExist)
       Navigator.pushReplacementNamed(context, "/passwordEnteringPage");
-    else
-      Navigator.pushReplacementNamed(context, "/homepage");
+    else {
+      deleteAllFiles();
+      Navigator.pushReplacementNamed(context, "/passwordSettingPage");
+    }
   }
 
   @override

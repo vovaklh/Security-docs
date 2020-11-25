@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:security_docs/utils/fileUtils.dart';
-import 'package:security_docs/logics/Password.dart';
+import 'package:security_docs/logics/FaceVerificator.dart';
 import 'package:path/path.dart';
 
 enum MenuOption { addFace, addFile }
@@ -24,10 +24,9 @@ Future<void> moveAndAddFile(Function addFile) async {
 
 void choiceAction(MenuOption choice, BuildContext context, Function addFile) {
   if (choice == MenuOption.addFace) {
-    Password().checkIfPasswordExist().then((passwordExist) {
-      if (!passwordExist) {
-        Navigator.pushReplacementNamed(context, "/passwordSettingPage");
-      }
+    FaceVerificator faceVerificator = FaceVerificator();
+    faceVerificator.checkIfFaceExist().then((faceExist) {
+      if (!faceExist) Navigator.pushReplacementNamed(context, "/facepage");
     });
   } else if (choice == MenuOption.addFile) {
     moveAndAddFile(addFile);

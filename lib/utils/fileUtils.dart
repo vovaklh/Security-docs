@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:security_docs/models/CustomFile.dart';
 import 'dart:io' as io;
@@ -8,14 +6,12 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:path/path.dart';
 import 'package:aes_crypt/aes_crypt.dart';
 
-// Return the path of external storage
 Future<String> getExternalPath() async {
   var dir = await getExternalStorageDirectory();
 
   return dir.path;
 }
 
-// Return the path of local storage
 Future<String> getLocalPath() async {
   var dir = await getApplicationDocumentsDirectory();
 
@@ -29,7 +25,6 @@ Future<void> getPermission() async {
   }
 }
 
-// Return the path of selected file
 Future<String> getOtherFilePath() async {
   String path = await FilePicker.getFilePath();
 
@@ -55,7 +50,6 @@ String getFileName(String path) {
   }
 }
 
-// Return list of files from external directory
 Future<List<CustomFile>> loadFiles() async {
   await getPermission();
 
@@ -82,6 +76,14 @@ Future<void> encryptFile(Map pathMap) {
   crypt.encryptFileSync(pathMap['oldPath'], pathMap['newPath']);
 }
 
+Future<String> decryptFile(String path) async {
+  var crypt = AesCrypt('ubnkth');
+  crypt.setOverwriteMode(AesCryptOwMode.on);
+  String newPath = crypt.decryptFileSync(path);
+
+  return newPath;
+}
+
 Future<void> deleteAllEncrypted() async {
   String path = await getExternalPath();
 
@@ -91,10 +93,14 @@ Future<void> deleteAllEncrypted() async {
   }
 }
 
-Future<String> decryptFile(String path) async {
-  var crypt = AesCrypt('ubnkth');
-  crypt.setOverwriteMode(AesCryptOwMode.on);
-  String newPath = crypt.decryptFileSync(path);
+Future<void> deleteAllFiles() async {
+  await getPermission();
 
-  return newPath;
+  String path = await getExternalPath();
+
+  List<String> allFiles = io.Directory("$path").listSync().map((e) => e.path).toList();
+  for (String i in allFiles) {
+    if (extension(i) != "") io.File(i).delete();
+  }
 }
+

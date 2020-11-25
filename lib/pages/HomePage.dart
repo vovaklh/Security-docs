@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:security_docs/widgets/FileWidget.dart';
 import 'package:security_docs/widgets/PopUpButton.dart';
-import 'package:security_docs/logics/Strings.dart' show homePageStrings;
+import 'package:security_docs/logics/Strings.dart';
 import 'package:security_docs/blocs/FileBloc.dart';
 import 'package:security_docs/utils/fileUtils.dart';
 

@@ -6,7 +6,7 @@ import 'package:image/image.dart' as imutils;
 import 'package:security_docs/logics/FaceVerificator.dart';
 import 'package:security_docs/utils/faceUtils.dart';
 import 'package:security_docs/logics/MyFaceDetector.dart';
-import 'package:security_docs/logics/Strings.dart' show facePageStrings;
+import 'package:security_docs/logics/Strings.dart';
 
 class FacePage extends StatefulWidget {
   @override
@@ -31,18 +31,20 @@ class _FacePageState extends State<FacePage> {
   }
 
   void encodeFace(imutils.Image face) async {
-    FaceVerificator faceVerificator = FaceVerificator(112, 128, 128);
+    FaceVerificator faceVerificator = FaceVerificator();
     await faceVerificator.loadModel(modelPath: "models/mobilefacenet.tflite");
     List faceVector = faceVerificator.getOutput(face);
     faceVerificator.saveArrayToFile(faceVector);
     faceVerificator.closeInterpreter();
   }
 
-  Future detectFaces() async {
+  Future<void> detectFaces() async {
     setButtonToDefault();
 
     File image = await ImagePicker.pickImage(
-        source: ImageSource.camera, preferredCameraDevice: CameraDevice.front);
+      source: ImageSource.camera,
+      preferredCameraDevice: CameraDevice.front,
+    );
     MyFaceDetector myFaceDetector = MyFaceDetector();
     List<Face> faces = await myFaceDetector.predictImageFromFile(image);
 
@@ -60,8 +62,8 @@ class _FacePageState extends State<FacePage> {
 
       encodeFace(croppedFace);
 
-      await Future.delayed(Duration(seconds: 2));
-      Navigator.pushReplacementNamed(context, "/homepage");
+      Future.delayed(Duration(seconds: 2)).then(
+          (value) => Navigator.pushReplacementNamed(context, "/homepage"));
     }
   }
 

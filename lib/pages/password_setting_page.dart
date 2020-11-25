@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:passwordfield/passwordfield.dart';
 import 'package:security_docs/logics/Password.dart';
-import 'package:security_docs/logics/Strings.dart'
-    show passwordSettingPageStrings;
+import 'package:security_docs/logics/Strings.dart';
 
 class PasswordSettingPage extends StatefulWidget {
   @override
@@ -34,7 +33,7 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
 
     if (validatePassword(newPassword)) {
       await password.setPassword(password: newPassword);
-      Navigator.pushReplacementNamed(context, "/facepage");
+      Navigator.pushReplacementNamed(context, "/homepage");
     }
   }
 

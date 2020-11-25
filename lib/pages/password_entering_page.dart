@@ -4,8 +4,7 @@ import 'package:security_docs/logics/Password.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:security_docs/logics/FaceVerificator.dart';
 import 'package:security_docs/logics/CameraVerificator.dart';
-import 'package:security_docs/logics/Strings.dart'
-    show passwordEnteringPageStrings;
+import 'package:security_docs/logics/Strings.dart';
 import 'package:flutter_gifimage/flutter_gifimage.dart';
 
 class PasswordEnteringPage extends StatefulWidget {
@@ -18,7 +17,7 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
   final _controller = TextEditingController();
   final double _animateTo = 165.0;
   final int _timeOfGifDuration = 3000;
-  final int _timeOfSoundDuration = 2400;
+  final int _timeOfSoundDuration = 2300;
   CameraVerificator _cameraVerificator;
   GifController _gifController;
 
@@ -48,7 +47,7 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
   }
 
   Future<void> verifyFace() async {
-    FaceVerificator faceVerificator = FaceVerificator(112, 128, 128);
+    FaceVerificator faceVerificator = FaceVerificator();
     bool faceExist = await faceVerificator.checkIfFaceExist();
 
     if (faceExist) {

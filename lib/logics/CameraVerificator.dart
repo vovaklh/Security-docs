@@ -26,7 +26,7 @@ class CameraVerificator {
 
   Future<void> startDetectingAndVerifyFace(Function function) async {
     MyFaceDetector myFaceDetector = MyFaceDetector();
-    _faceVerificator = FaceVerificator(112, 128, 128);
+    _faceVerificator = FaceVerificator();
     await _faceVerificator.loadModel(modelPath: "models/mobilefacenet.tflite");
     List savedFace = await _faceVerificator.getFace();
 

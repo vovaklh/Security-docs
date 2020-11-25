@@ -7,13 +7,15 @@ import 'package:security_docs/utils/fileUtils.dart';
 class FaceVerificator {
   tf.Interpreter _interpreter;
   int _size;
+  int _outShape;
   double _mean;
   double _std;
 
-  FaceVerificator(int size, double mean, double std) {
+  FaceVerificator({int size = 112, double mean = 128, double std = 128, int outShape = 192}) {
     this._size = size;
     this._mean = mean;
     this._std = std;
+    this._outShape = outShape;
   }
 
   // Load model with delegate
@@ -40,18 +42,18 @@ class FaceVerificator {
   // Return output of facenet model
   List<dynamic> getOutput(imutils.Image face) {
     // Resize face to 112 height and with
-    face = imutils.copyResizeCropSquare(face, 112);
+    face = imutils.copyResizeCropSquare(face, _size);
 
     //Reshape image
     List input = imageToByteListFloat32(face, _size, _mean, _std);
     input = input.reshape([1, _size, _size, 3]);
 
     //Creating list for otput
-    List output = List(1 * 192).reshape([1, 192]);
+    List output = List(1 * _outShape).reshape([1, _outShape]);
     this._interpreter.run(input, output);
 
     //Reshape otput
-    output = output.reshape([192]);
+    output = output.reshape([_outShape]);
 
     return output;
   }
