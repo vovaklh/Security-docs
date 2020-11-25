@@ -6,30 +6,30 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml
+8-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="28" />
-9-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml
+9-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-11-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:3:5-79
-11-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:3:22-77
+11-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:3:5-79
+11-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:3:22-77
 12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-12-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:4:5-80
-12-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:4:22-78
+12-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:4:5-80
+12-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:4:22-78
 13    <uses-permission android:name="android.permission.CAMERA" />
-13-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:5:5-64
-13-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:5:22-62
+13-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:5:5-64
+13-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:5:22-62
 14
 15    <uses-feature android:name="android.hardware.camera" />
-15-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:6:5-60
-15-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:6:19-57
+15-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:6:5-60
+15-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:6:19-57
 16
 17    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-17-->[:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:8:5-83
-17-->[:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:8:22-80
+17-->[:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:8:5-83
+17-->[:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:8:22-80
 18    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-18-->[:camera] D:\Android_projects\security_docs\build\camera\intermediates\library_manifest\release\AndroidManifest.xml:8:5-71
-18-->[:camera] D:\Android_projects\security_docs\build\camera\intermediates\library_manifest\release\AndroidManifest.xml:8:22-68
+18-->[:camera] D:\Android_projects\Security-docs\build\camera\intermediates\library_manifest\release\AndroidManifest.xml:8:5-71
+18-->[:camera] D:\Android_projects\Security-docs\build\camera\intermediates\library_manifest\release\AndroidManifest.xml:8:22-68
 19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 19-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\Я\.gradle\caches\transforms-2\files-2.1\1d113002b469fa511a5a76750fa27d8d\firebase-iid-20.1.5\AndroidManifest.xml:22:5-79
 19-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\Я\.gradle\caches\transforms-2\files-2.1\1d113002b469fa511a5a76750fa27d8d\firebase-iid-20.1.5\AndroidManifest.xml:22:22-76
@@ -50,31 +50,31 @@
 28         FlutterApplication and put your custom class here.
 29    -->
 30    <application
-30-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:12:5-51:19
+30-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:12:5-51:19
 31        android:name="io.flutter.app.FlutterApplication"
-31-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:13:9-57
+31-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:13:9-57
 32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 32-->[androidx.core:core:1.1.0] C:\Users\Я\.gradle\caches\transforms-2\files-2.1\fdb7f764bae631c34cad86862de08b65\core-1.1.0\AndroidManifest.xml:24:18-86
 33        android:icon="@mipmap/ic_launcher"
-33-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:15:9-43
+33-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:15:9-43
 34        android:label="Security docs" >
-34-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:14:9-38
+34-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:14:9-38
 35        <activity
-35-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:16:9-45:20
+35-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:16:9-45:20
 36            android:name="com.example.security_docs.MainActivity"
-36-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:17:13-41
+36-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:17:13-41
 37            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-37-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:21:13-163
+37-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:21:13-163
 38            android:hardwareAccelerated="true"
-38-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:22:13-47
+38-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:22:13-47
 39            android:launchMode="singleTop"
-39-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:18:13-43
+39-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:18:13-43
 40            android:screenOrientation="portrait"
-40-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:19:13-49
+40-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:19:13-49
 41            android:theme="@style/LaunchTheme"
-41-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:20:13-47
+41-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:20:13-47
 42            android:windowSoftInputMode="adjustResize" >
-42-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:23:13-55
+42-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:23:13-55
 43
 44            <!--
 45                 Specifies an Android theme to apply to this Activity as soon as
@@ -83,11 +83,11 @@
 48                 to determine the Window background behind the Flutter UI.
 49            -->
 50            <meta-data
-50-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:28:13-31:17
+50-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:28:13-31:17
 51                android:name="io.flutter.embedding.android.NormalTheme"
-51-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:29:15-70
+51-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:29:15-70
 52                android:resource="@style/NormalTheme" />
-52-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:30:15-52
+52-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:30:15-52
 53            <!--
 54                 Displays an Android View that continues showing the launch screen
 55                 Drawable until Flutter paints its first frame, then this splash
@@ -96,21 +96,21 @@
 58                 Flutter's first frame.
 59            -->
 60            <meta-data
-60-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:37:13-40:17
+60-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:37:13-40:17
 61                android:name="io.flutter.embedding.android.SplashScreenDrawable"
-61-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:38:15-79
+61-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:38:15-79
 62                android:resource="@drawable/launch_background" />
-62-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:39:15-61
+62-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:39:15-61
 63
 64            <intent-filter>
-64-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:41:13-44:29
+64-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:41:13-44:29
 65                <action android:name="android.intent.action.MAIN" />
-65-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:42:17-68
-65-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:42:25-66
+65-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:42:17-68
+65-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:42:25-66
 66
 67                <category android:name="android.intent.category.LAUNCHER" />
-67-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:43:17-76
-67-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:43:27-74
+67-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:43:17-76
+67-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:43:27-74
 68            </intent-filter>
 69        </activity>
 70        <!--
@@ -118,26 +118,26 @@
 72             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
 73        -->
 74        <meta-data
-74-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:48:9-50:33
+74-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:48:9-50:33
 75            android:name="flutterEmbedding"
-75-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:49:13-44
+75-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:49:13-44
 76            android:value="2" />
-76-->D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:50:13-30
+76-->D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:50:13-30
 77
 78        <service
-78-->[:firebase_ml_vision] D:\Android_projects\security_docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:8:9-12:19
+78-->[:firebase_ml_vision] D:\Android_projects\Security-docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:8:9-12:19
 79            android:name="com.google.firebase.components.ComponentDiscoveryService"
-79-->[:firebase_ml_vision] D:\Android_projects\security_docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:8:18-89
+79-->[:firebase_ml_vision] D:\Android_projects\Security-docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:8:18-89
 80            android:directBootAware="true"
 80-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Я\.gradle\caches\transforms-2\files-2.1\1dc2500b17226ca924b5c87cc4747605\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
 81            android:exported="false" >
 81-->[com.google.firebase:firebase-ml-vision:24.0.3] C:\Users\Я\.gradle\caches\transforms-2\files-2.1\3141f1abd6a04d7bbe96f50516d78afc\firebase-ml-vision-24.0.3\AndroidManifest.xml:11:13-37
 82            <meta-data
-82-->[:firebase_ml_vision] D:\Android_projects\security_docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:9:13-11:85
+82-->[:firebase_ml_vision] D:\Android_projects\Security-docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:9:13-11:85
 83                android:name="com.google.firebase.components:io.flutter.plugins.firebasemlvision.FlutterFirebaseAppRegistrar"
-83-->[:firebase_ml_vision] D:\Android_projects\security_docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:10:17-126
+83-->[:firebase_ml_vision] D:\Android_projects\Security-docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:10:17-126
 84                android:value="com.google.firebase.components.ComponentRegistrar" />
-84-->[:firebase_ml_vision] D:\Android_projects\security_docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:11:17-82
+84-->[:firebase_ml_vision] D:\Android_projects\Security-docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:11:17-82
 85            <meta-data
 85-->[com.google.firebase:firebase-ml-vision:24.0.3] C:\Users\Я\.gradle\caches\transforms-2\files-2.1\3141f1abd6a04d7bbe96f50516d78afc\firebase-ml-vision-24.0.3\AndroidManifest.xml:12:13-14:85
 86                android:name="com.google.firebase.components:com.google.firebase.ml.vision.VisionRegistrar"
@@ -165,38 +165,38 @@
 97        </service>
 98
 99        <provider
-99-->[:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:11:9-19:20
+99-->[:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:11:9-19:20
 100            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-100-->[:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:12:13-82
+100-->[:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:12:13-82
 101            android:authorities="com.vovaklh.security_docs.flutter.image_provider"
-101-->[:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:13:13-74
+101-->[:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:13:13-74
 102            android:exported="false"
-102-->[:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:14:13-37
+102-->[:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:14:13-37
 103            android:grantUriPermissions="true" >
-103-->[:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:15:13-47
+103-->[:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:15:13-47
 104            <meta-data
-104-->[:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:16:13-18:75
+104-->[:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:16:13-18:75
 105                android:name="android.support.FILE_PROVIDER_PATHS"
-105-->[:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:17:17-67
+105-->[:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:17:17-67
 106                android:resource="@xml/flutter_image_picker_file_paths" />
-106-->[:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:18:17-72
+106-->[:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:18:17-72
 107        </provider>
 108        <provider
-108-->[:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:12:9-21:20
+108-->[:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:12:9-21:20
 109            android:name="androidx.core.content.FileProvider"
-109-->[:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:13:13-62
+109-->[:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:13:13-62
 110            android:authorities="com.vovaklh.security_docs.fileProvider"
-110-->[:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:14:13-64
+110-->[:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:14:13-64
 111            android:exported="false"
-111-->[:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:15:13-37
+111-->[:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:15:13-37
 112            android:grantUriPermissions="true" >
-112-->[:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:16:13-47
+112-->[:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:16:13-47
 113            <meta-data
-113-->[:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:16:13-18:75
+113-->[:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:16:13-18:75
 114                android:name="android.support.FILE_PROVIDER_PATHS"
-114-->[:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:17:17-67
+114-->[:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:17:17-67
 115                android:resource="@xml/filepaths" />
-115-->[:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:18:17-72
+115-->[:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:18:17-72
 116        </provider>
 117
 118        <receiver

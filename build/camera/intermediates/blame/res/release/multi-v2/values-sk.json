@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Android_projects\\security_docs\\build\\camera\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-sk\\values-sk.xml",
+            "outputFile": "D:\\Android_projects\\Security-docs\\build\\camera\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-sk\\values-sk.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Я\\.gradle\\caches\\transforms-2\\files-2.1\\fdb7f764bae631c34cad86862de08b65\\core-1.1.0\\res\\values-sk\\values-sk.xml",
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "outputFile": "D:\\Android_projects\\security_docs\\build\\camera\\intermediates\\res\\merged\\release\\values-sk\\values-sk.xml",
+            "outputFile": "D:\\Android_projects\\Security-docs\\build\\camera\\intermediates\\res\\merged\\release\\values-sk\\values-sk.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Я\\.gradle\\caches\\transforms-2\\files-2.1\\fdb7f764bae631c34cad86862de08b65\\core-1.1.0\\res\\values-sk\\values-sk.xml",

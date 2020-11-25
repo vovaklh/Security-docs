@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:1:1-52:12
-INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:1:1-52:12
-INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:1:1-52:12
-INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:1:1-52:12
-MERGED from [:firebase_ml_vision] D:\Android_projects\security_docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:2:1-15:12
+ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:1:1-52:12
+INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:1:1-52:12
+INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:1:1-52:12
+INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:1:1-52:12
+MERGED from [:firebase_ml_vision] D:\Android_projects\Security-docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:2:1-15:12
 MERGED from [com.google.firebase:firebase-ml-vision:24.0.3] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\3141f1abd6a04d7bbe96f50516d78afc\firebase-ml-vision-24.0.3\AndroidManifest.xml:2:1-18:12
-MERGED from [:file_picker] D:\Android_projects\security_docs\build\file_picker\intermediates\library_manifest\release\AndroidManifest.xml:2:1-9:12
-MERGED from [:audioplayers] D:\Android_projects\security_docs\build\audioplayers\intermediates\library_manifest\release\AndroidManifest.xml:2:1-9:12
-MERGED from [:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:2:1-22:12
-MERGED from [:flutter_plugin_android_lifecycle] D:\Android_projects\security_docs\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
-MERGED from [:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:2:1-24:12
-MERGED from [:tflite_flutter] D:\Android_projects\security_docs\build\tflite_flutter\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
-MERGED from [:camera] D:\Android_projects\security_docs\build\camera\intermediates\library_manifest\release\AndroidManifest.xml:2:1-10:12
-MERGED from [:path_provider] D:\Android_projects\security_docs\build\path_provider\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
-MERGED from [:permission_handler] D:\Android_projects\security_docs\build\permission_handler\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
+MERGED from [:file_picker] D:\Android_projects\Security-docs\build\file_picker\intermediates\library_manifest\release\AndroidManifest.xml:2:1-9:12
+MERGED from [:audioplayers] D:\Android_projects\Security-docs\build\audioplayers\intermediates\library_manifest\release\AndroidManifest.xml:2:1-9:12
+MERGED from [:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:2:1-22:12
+MERGED from [:flutter_plugin_android_lifecycle] D:\Android_projects\Security-docs\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
+MERGED from [:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:2:1-24:12
+MERGED from [:tflite_flutter] D:\Android_projects\Security-docs\build\tflite_flutter\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
+MERGED from [:camera] D:\Android_projects\Security-docs\build\camera\intermediates\library_manifest\release\AndroidManifest.xml:2:1-10:12
+MERGED from [:path_provider] D:\Android_projects\Security-docs\build\path_provider\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
+MERGED from [:permission_handler] D:\Android_projects\Security-docs\build\permission_handler\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\8d468b7d51cc99648bc21eb9d79c6528\exifinterface-1.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\ac100667c13576928f788eb418b190c5\play-services-auth-base-17.0.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-vision:20.0.0] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\ef5a334a7eef0fccd26c6c5fd95bce09\play-services-vision-20.0.0\AndroidManifest.xml:2:1-9:12
@@ -61,59 +61,59 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\ß\.gradle\caches\transforms-2\
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\5359d9001e21b8c9d2ed40fe25a1f29d\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\ab45c37217e209262475729f6e7eff8b\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\4966b31b495f415915124f116221eefc\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
-INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:1:1-52:12
-INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:1:1-52:12
-INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:1:1-52:12
+INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:1:1-52:12
+INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:1:1-52:12
+INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:1:1-52:12
 	package
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:2:5-40
-		INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:2:5-40
+		INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:1:1-52:12
-		INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:1:1-52:12
+		INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:1:1-52:12
-		INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:1:1-52:12
+		INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:1:11-69
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:3:5-79
-MERGED from [:file_picker] D:\Android_projects\security_docs\build\file_picker\intermediates\library_manifest\release\AndroidManifest.xml:7:5-80
-MERGED from [:file_picker] D:\Android_projects\security_docs\build\file_picker\intermediates\library_manifest\release\AndroidManifest.xml:7:5-80
-MERGED from [:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:7:5-80
-MERGED from [:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:7:5-80
-MERGED from [:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:9:5-80
-MERGED from [:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:9:5-80
+ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:3:5-79
+MERGED from [:file_picker] D:\Android_projects\Security-docs\build\file_picker\intermediates\library_manifest\release\AndroidManifest.xml:7:5-80
+MERGED from [:file_picker] D:\Android_projects\Security-docs\build\file_picker\intermediates\library_manifest\release\AndroidManifest.xml:7:5-80
+MERGED from [:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:7:5-80
+MERGED from [:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:7:5-80
+MERGED from [:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:9:5-80
+MERGED from [:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:9:5-80
 	android:name
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:3:22-77
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:3:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:4:5-80
-MERGED from [:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:8:5-81
-MERGED from [:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:8:5-81
+ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:4:5-80
+MERGED from [:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:8:5-81
+MERGED from [:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:8:5-81
 	android:name
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:4:22-78
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:4:22-78
 uses-permission#android.permission.CAMERA
-ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:5:5-64
-MERGED from [:camera] D:\Android_projects\security_docs\build\camera\intermediates\library_manifest\release\AndroidManifest.xml:7:5-65
-MERGED from [:camera] D:\Android_projects\security_docs\build\camera\intermediates\library_manifest\release\AndroidManifest.xml:7:5-65
+ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:5:5-64
+MERGED from [:camera] D:\Android_projects\Security-docs\build\camera\intermediates\library_manifest\release\AndroidManifest.xml:7:5-65
+MERGED from [:camera] D:\Android_projects\Security-docs\build\camera\intermediates\library_manifest\release\AndroidManifest.xml:7:5-65
 	android:name
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:5:22-62
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:5:22-62
 uses-feature#android.hardware.camera
-ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:6:5-60
+ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:6:5-60
 	android:name
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:6:19-57
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:6:19-57
 application
-ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:12:5-51:19
-MERGED from [:firebase_ml_vision] D:\Android_projects\security_docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
-MERGED from [:firebase_ml_vision] D:\Android_projects\security_docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
+ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:12:5-51:19
+MERGED from [:firebase_ml_vision] D:\Android_projects\Security-docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_ml_vision] D:\Android_projects\Security-docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
 MERGED from [com.google.firebase:firebase-ml-vision:24.0.3] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\3141f1abd6a04d7bbe96f50516d78afc\firebase-ml-vision-24.0.3\AndroidManifest.xml:8:5-16:19
 MERGED from [com.google.firebase:firebase-ml-vision:24.0.3] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\3141f1abd6a04d7bbe96f50516d78afc\firebase-ml-vision-24.0.3\AndroidManifest.xml:8:5-16:19
-MERGED from [:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:10:5-20:19
-MERGED from [:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:10:5-20:19
-MERGED from [:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:11:5-22:19
-MERGED from [:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:11:5-22:19
+MERGED from [:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:10:5-20:19
+MERGED from [:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:10:5-20:19
+MERGED from [:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:11:5-22:19
+MERGED from [:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:11:5-22:19
 MERGED from [com.google.android.gms:play-services-vision:20.0.0] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\ef5a334a7eef0fccd26c6c5fd95bce09\play-services-vision-20.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-vision:20.0.0] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\ef5a334a7eef0fccd26c6c5fd95bce09\play-services-vision-20.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-vision-image-label:18.0.3] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\b6375ee06a8ec94a57e4647f14b8a3ff\play-services-vision-image-label-18.0.3\AndroidManifest.xml:7:5-20
@@ -149,81 +149,81 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\ß\
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\fdb7f764bae631c34cad86862de08b65\core-1.1.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:14:9-38
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:14:9-38
 	android:icon
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:15:9-43
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:15:9-43
 	android:name
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:13:9-57
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:13:9-57
 activity#com.example.security_docs.MainActivity
-ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:16:9-45:20
+ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:16:9-45:20
 	android:screenOrientation
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:19:13-49
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:19:13-49
 	android:launchMode
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:18:13-43
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:18:13-43
 	android:hardwareAccelerated
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:22:13-47
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:22:13-47
 	android:windowSoftInputMode
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:23:13-55
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:23:13-55
 	android:configChanges
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:21:13-163
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:21:13-163
 	android:theme
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:20:13-47
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:20:13-47
 	android:name
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:17:13-41
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:17:13-41
 meta-data#io.flutter.embedding.android.NormalTheme
-ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:28:13-31:17
+ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:28:13-31:17
 	android:resource
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:30:15-52
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:30:15-52
 	android:name
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:29:15-70
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:29:15-70
 meta-data#io.flutter.embedding.android.SplashScreenDrawable
-ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:37:13-40:17
+ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:37:13-40:17
 	android:resource
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:39:15-61
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:39:15-61
 	android:name
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:38:15-79
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:38:15-79
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:41:13-44:29
+ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:41:13-44:29
 action#android.intent.action.MAIN
-ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:42:17-68
+ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:42:17-68
 	android:name
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:42:25-66
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:42:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:43:17-76
+ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:43:17-76
 	android:name
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:43:27-74
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:43:27-74
 meta-data#flutterEmbedding
-ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:48:9-50:33
+ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:48:9-50:33
 	android:value
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:50:13-30
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:50:13-30
 	android:name
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml:49:13-44
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml:49:13-44
 uses-sdk
-INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml
-INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml
-MERGED from [:firebase_ml_vision] D:\Android_projects\security_docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:firebase_ml_vision] D:\Android_projects\security_docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml
+MERGED from [:firebase_ml_vision] D:\Android_projects\Security-docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_ml_vision] D:\Android_projects\Security-docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-ml-vision:24.0.3] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\3141f1abd6a04d7bbe96f50516d78afc\firebase-ml-vision-24.0.3\AndroidManifest.xml:6:5-44
 MERGED from [com.google.firebase:firebase-ml-vision:24.0.3] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\3141f1abd6a04d7bbe96f50516d78afc\firebase-ml-vision-24.0.3\AndroidManifest.xml:6:5-44
-MERGED from [:file_picker] D:\Android_projects\security_docs\build\file_picker\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:file_picker] D:\Android_projects\security_docs\build\file_picker\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:audioplayers] D:\Android_projects\security_docs\build\audioplayers\intermediates\library_manifest\release\AndroidManifest.xml:7:5-44
-MERGED from [:audioplayers] D:\Android_projects\security_docs\build\audioplayers\intermediates\library_manifest\release\AndroidManifest.xml:7:5-44
-MERGED from [:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:flutter_plugin_android_lifecycle] D:\Android_projects\security_docs\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:flutter_plugin_android_lifecycle] D:\Android_projects\security_docs\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:6:5-44
-MERGED from [:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:6:5-44
-MERGED from [:tflite_flutter] D:\Android_projects\security_docs\build\tflite_flutter\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:tflite_flutter] D:\Android_projects\security_docs\build\tflite_flutter\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:camera] D:\Android_projects\security_docs\build\camera\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:camera] D:\Android_projects\security_docs\build\camera\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:path_provider] D:\Android_projects\security_docs\build\path_provider\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:path_provider] D:\Android_projects\security_docs\build\path_provider\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:permission_handler] D:\Android_projects\security_docs\build\permission_handler\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:permission_handler] D:\Android_projects\security_docs\build\permission_handler\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:file_picker] D:\Android_projects\Security-docs\build\file_picker\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:file_picker] D:\Android_projects\Security-docs\build\file_picker\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:audioplayers] D:\Android_projects\Security-docs\build\audioplayers\intermediates\library_manifest\release\AndroidManifest.xml:7:5-44
+MERGED from [:audioplayers] D:\Android_projects\Security-docs\build\audioplayers\intermediates\library_manifest\release\AndroidManifest.xml:7:5-44
+MERGED from [:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] D:\Android_projects\Security-docs\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] D:\Android_projects\Security-docs\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:6:5-44
+MERGED from [:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:6:5-44
+MERGED from [:tflite_flutter] D:\Android_projects\Security-docs\build\tflite_flutter\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:tflite_flutter] D:\Android_projects\Security-docs\build\tflite_flutter\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:camera] D:\Android_projects\Security-docs\build\camera\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:camera] D:\Android_projects\Security-docs\build\camera\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] D:\Android_projects\Security-docs\build\path_provider\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] D:\Android_projects\Security-docs\build\path_provider\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:permission_handler] D:\Android_projects\Security-docs\build\permission_handler\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:permission_handler] D:\Android_projects\Security-docs\build\permission_handler\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\8d468b7d51cc99648bc21eb9d79c6528\exifinterface-1.3.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\8d468b7d51cc99648bc21eb9d79c6528\exifinterface-1.3.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\ac100667c13576928f788eb418b190c5\play-services-auth-base-17.0.0\AndroidManifest.xml:5:5-44
@@ -316,18 +316,18 @@ MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ß\.gradle\cach
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\ab45c37217e209262475729f6e7eff8b\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\4966b31b495f415915124f116221eefc\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\4966b31b495f415915124f116221eefc\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
-INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml
-INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Android_projects\security_docs\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android_projects\Security-docs\android\app\src\main\AndroidManifest.xml
 service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from [:firebase_ml_vision] D:\Android_projects\security_docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:8:9-12:19
+ADDED from [:firebase_ml_vision] D:\Android_projects\Security-docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:8:9-12:19
 MERGED from [com.google.firebase:firebase-ml-vision:24.0.3] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\3141f1abd6a04d7bbe96f50516d78afc\firebase-ml-vision-24.0.3\AndroidManifest.xml:9:9-15:19
 MERGED from [com.google.firebase:firebase-ml-vision:24.0.3] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\3141f1abd6a04d7bbe96f50516d78afc\firebase-ml-vision-24.0.3\AndroidManifest.xml:9:9-15:19
 MERGED from [com.google.firebase:firebase-ml-common:22.1.1] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\432cae9ee7db17739408de6a6bbf907c\firebase-ml-common-22.1.1\AndroidManifest.xml:8:9-14:19
@@ -345,13 +345,13 @@ MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\ß\.gradle\cach
 	android:directBootAware
 		ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\1dc2500b17226ca924b5c87cc4747605\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
 	android:name
-		ADDED from [:firebase_ml_vision] D:\Android_projects\security_docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:8:18-89
+		ADDED from [:firebase_ml_vision] D:\Android_projects\Security-docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:8:18-89
 meta-data#com.google.firebase.components:io.flutter.plugins.firebasemlvision.FlutterFirebaseAppRegistrar
-ADDED from [:firebase_ml_vision] D:\Android_projects\security_docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:9:13-11:85
+ADDED from [:firebase_ml_vision] D:\Android_projects\Security-docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:9:13-11:85
 	android:value
-		ADDED from [:firebase_ml_vision] D:\Android_projects\security_docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:11:17-82
+		ADDED from [:firebase_ml_vision] D:\Android_projects\Security-docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:11:17-82
 	android:name
-		ADDED from [:firebase_ml_vision] D:\Android_projects\security_docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:10:17-126
+		ADDED from [:firebase_ml_vision] D:\Android_projects\Security-docs\build\firebase_ml_vision\intermediates\library_manifest\release\AndroidManifest.xml:10:17-126
 meta-data#com.google.firebase.components:com.google.firebase.ml.vision.VisionRegistrar
 ADDED from [com.google.firebase:firebase-ml-vision:24.0.3] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\3141f1abd6a04d7bbe96f50516d78afc\firebase-ml-vision-24.0.3\AndroidManifest.xml:12:13-14:85
 	android:value
@@ -359,41 +359,41 @@ ADDED from [com.google.firebase:firebase-ml-vision:24.0.3] C:\Users\ß\.gradle\ca
 	android:name
 		ADDED from [com.google.firebase:firebase-ml-vision:24.0.3] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\3141f1abd6a04d7bbe96f50516d78afc\firebase-ml-vision-24.0.3\AndroidManifest.xml:13:17-108
 provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
-ADDED from [:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:11:9-19:20
+ADDED from [:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:11:9-19:20
 	android:grantUriPermissions
-		ADDED from [:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:15:13-47
+		ADDED from [:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:15:13-47
 	android:authorities
-		ADDED from [:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:13:13-74
+		ADDED from [:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:13:13-74
 	android:exported
-		ADDED from [:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:14:13-37
+		ADDED from [:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:14:13-37
 	android:name
-		ADDED from [:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:12:13-82
+		ADDED from [:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:12:13-82
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:16:13-18:75
+ADDED from [:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:16:13-18:75
 	android:resource
-		ADDED from [:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:18:17-72
+		ADDED from [:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:18:17-72
 	android:name
-		ADDED from [:image_picker] D:\Android_projects\security_docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:17:17-67
+		ADDED from [:image_picker] D:\Android_projects\Security-docs\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:17:17-67
 uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
-ADDED from [:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:8:5-83
+ADDED from [:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:8:5-83
 	android:name
-		ADDED from [:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:8:22-80
+		ADDED from [:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:8:22-80
 provider#androidx.core.content.FileProvider
-ADDED from [:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:12:9-21:20
+ADDED from [:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:12:9-21:20
 	android:grantUriPermissions
-		ADDED from [:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:16:13-47
+		ADDED from [:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:16:13-47
 	android:authorities
-		ADDED from [:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:14:13-64
+		ADDED from [:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:14:13-64
 	android:exported
-		ADDED from [:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:15:13-37
+		ADDED from [:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:15:13-37
 	tools:replace
-		ADDED from [:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:17:13-48
+		ADDED from [:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:17:13-48
 	android:name
-		ADDED from [:open_file] D:\Android_projects\security_docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:13:13-62
+		ADDED from [:open_file] D:\Android_projects\Security-docs\build\open_file\intermediates\library_manifest\release\AndroidManifest.xml:13:13-62
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from [:camera] D:\Android_projects\security_docs\build\camera\intermediates\library_manifest\release\AndroidManifest.xml:8:5-71
+ADDED from [:camera] D:\Android_projects\Security-docs\build\camera\intermediates\library_manifest\release\AndroidManifest.xml:8:5-71
 	android:name
-		ADDED from [:camera] D:\Android_projects\security_docs\build\camera\intermediates\library_manifest\release\AndroidManifest.xml:8:22-68
+		ADDED from [:camera] D:\Android_projects\Security-docs\build\camera\intermediates\library_manifest\release\AndroidManifest.xml:8:22-68
 meta-data#com.google.firebase.components:com.google.firebase.ml.common.CommonComponentRegistrar
 ADDED from [com.google.firebase:firebase-ml-common:22.1.1] C:\Users\ß\.gradle\caches\transforms-2\files-2.1\432cae9ee7db17739408de6a6bbf907c\firebase-ml-common-22.1.1\AndroidManifest.xml:11:13-13:85
 	android:value

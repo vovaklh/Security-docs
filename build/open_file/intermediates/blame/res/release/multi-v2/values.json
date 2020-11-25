@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Android_projects\\security_docs\\build\\open_file\\intermediates\\res\\merged\\release\\values\\values.xml",
+            "outputFile": "D:\\Android_projects\\Security-docs\\build\\open_file\\intermediates\\res\\merged\\release\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Я\\.gradle\\caches\\transforms-2\\files-2.1\\888991d5105f2b10d09d80025ba7bde9\\media-1.0.0\\res\\values\\values.xml",
@@ -61,7 +61,7 @@
             ]
         },
         {
-            "outputFile": "D:\\Android_projects\\security_docs\\build\\open_file\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
+            "outputFile": "D:\\Android_projects\\Security-docs\\build\\open_file\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Я\\.gradle\\caches\\transforms-2\\files-2.1\\888991d5105f2b10d09d80025ba7bde9\\media-1.0.0\\res\\values\\values.xml",

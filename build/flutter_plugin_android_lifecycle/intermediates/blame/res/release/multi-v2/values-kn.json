@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Android_projects\\security_docs\\build\\flutter_plugin_android_lifecycle\\intermediates\\res\\merged\\release\\values-kn\\values-kn.xml",
+            "outputFile": "D:\\Android_projects\\Security-docs\\build\\flutter_plugin_android_lifecycle\\intermediates\\res\\merged\\release\\values-kn\\values-kn.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Я\\.gradle\\caches\\transforms-2\\files-2.1\\fdb7f764bae631c34cad86862de08b65\\core-1.1.0\\res\\values-kn\\values-kn.xml",
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "outputFile": "D:\\Android_projects\\security_docs\\build\\flutter_plugin_android_lifecycle\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-kn\\values-kn.xml",
+            "outputFile": "D:\\Android_projects\\Security-docs\\build\\flutter_plugin_android_lifecycle\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-kn\\values-kn.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Я\\.gradle\\caches\\transforms-2\\files-2.1\\fdb7f764bae631c34cad86862de08b65\\core-1.1.0\\res\\values-kn\\values-kn.xml",

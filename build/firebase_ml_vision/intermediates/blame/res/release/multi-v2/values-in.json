@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Android_projects\\security_docs\\build\\firebase_ml_vision\\intermediates\\res\\merged\\release\\values-in\\values-in.xml",
+            "outputFile": "D:\\Android_projects\\Security-docs\\build\\firebase_ml_vision\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-in\\values-in.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Я\\.gradle\\caches\\transforms-2\\files-2.1\\e704de32e58e88769c36fdb297f0fc0d\\jetified-play-services-basement-16.1.0\\res\\values-in\\values.xml",
@@ -57,7 +57,7 @@
             ]
         },
         {
-            "outputFile": "D:\\Android_projects\\security_docs\\build\\firebase_ml_vision\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-in\\values-in.xml",
+            "outputFile": "D:\\Android_projects\\Security-docs\\build\\firebase_ml_vision\\intermediates\\res\\merged\\release\\values-in\\values-in.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Я\\.gradle\\caches\\transforms-2\\files-2.1\\e704de32e58e88769c36fdb297f0fc0d\\jetified-play-services-basement-16.1.0\\res\\values-in\\values.xml",
