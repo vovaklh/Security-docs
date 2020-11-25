@@ -15,9 +15,8 @@ class PasswordEnteringPage extends StatefulWidget {
 class _PasswordEnteringPageState extends State<PasswordEnteringPage>
     with TickerProviderStateMixin {
   final _controller = TextEditingController();
-  final double _animateTo = 165.0;
-  final int _timeOfGifDuration = 3000;
-  final int _timeOfSoundDuration = 2300;
+  final double _animateTo = 35.0;
+  final int _timeOfGifDuration = 1000;
   CameraVerificator _cameraVerificator;
   GifController _gifController;
 
@@ -37,8 +36,7 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
   /// Play sound and start animation
   Future<void> unlock() async {
     final player = AudioCache(prefix: PasswordEnteringPageStrings.pathToSound);
-    Future.delayed(Duration(milliseconds: _timeOfSoundDuration))
-        .then((value) => player.play(PasswordEnteringPageStrings.soundName));
+    player.play(PasswordEnteringPageStrings.soundName);
     _gifController
         .animateTo(_animateTo,
             duration: Duration(milliseconds: _timeOfGifDuration))
@@ -68,7 +66,7 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
   }
 
   /// Check if password exist and then compare password user input
-  void checkPassword(String newPassword) async {
+  Future<void> checkPassword(String newPassword) async {
     Password password = Password();
     String myPassword = await password.getPassword();
 

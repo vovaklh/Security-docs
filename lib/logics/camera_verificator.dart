@@ -20,7 +20,7 @@ class CameraVerificator {
     }
   }
 
-  disposeVerification() {
+  void disposeVerification() {
     _cameraController?.dispose();
     _faceVerificator?.closeInterpreter();
   }

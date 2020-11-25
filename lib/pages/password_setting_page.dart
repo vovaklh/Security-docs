@@ -31,7 +31,7 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
   }
 
   /// Write password to file
-  void setPassword(String newPassword) async {
+  Future<void> setPassword(String newPassword) async {
     Password password = Password();
 
     if (validatePassword(newPassword)) {

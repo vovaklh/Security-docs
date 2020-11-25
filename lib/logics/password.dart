@@ -12,7 +12,7 @@ class Password {
   }
 
   /// Write the hash of new password to txt file
-  setPassword({String password}) async {
+  void setPassword({String password}) async {
     String path = await getLocalPath();
     this._password = password.hashCode.toString();
 

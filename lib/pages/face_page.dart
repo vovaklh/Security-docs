@@ -33,7 +33,7 @@ class _FacePageState extends State<FacePage> {
   }
 
   /// Encode detected face and save to file
-  void encodeFace(imutils.Image face) async {
+  Future<void> encodeFace(imutils.Image face) async {
     FaceVerificator faceVerificator = FaceVerificator();
     await faceVerificator.loadModel(modelPath: FacePageStrings.pathToModel);
     List faceVector = faceVerificator.getOutput(face);
@@ -43,7 +43,7 @@ class _FacePageState extends State<FacePage> {
 
   /// Detect faces in chosen image
   Future<void> detectFaces() async {
-    setButtonToDefault();
+    setStatus(FacePageStrings.imageSelected);
 
     File image = await ImagePicker.pickImage(
       source: ImageSource.camera,
@@ -64,9 +64,9 @@ class _FacePageState extends State<FacePage> {
         this._face = Image.memory(imutils.encodePng(croppedFace));
       });
 
-      encodeFace(croppedFace);
+      await encodeFace(croppedFace);
 
-      Future.delayed(Duration(seconds: 2)).then(
+      Future.delayed(Duration(seconds: 4)).then(
           (value) => Navigator.pushReplacementNamed(context, "/home_page"));
     }
   }
