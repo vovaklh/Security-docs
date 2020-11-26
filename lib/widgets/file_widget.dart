@@ -5,7 +5,11 @@ import 'package:security_docs/icons/custom_icons.dart';
 import 'package:open_file/open_file.dart';
 
 /// Open file when it is decrypted
-Future<void> openFile({String filePath, Function showDialog, Function closeDialog}) {
+void openFile({
+  String filePath,
+  Function showDialog,
+  Function closeDialog,
+}) {
   showDialog();
   compute(decryptFile, filePath).then((newPath) {
     closeDialog();
@@ -13,7 +17,13 @@ Future<void> openFile({String filePath, Function showDialog, Function closeDialo
   });
 }
 
-Widget fileWidget({String filePath, String fileName, String fileExtension, Function showDialog, Function closeDialog}) {
+Widget fileWidget({
+  String filePath,
+  String fileName,
+  String fileExtension,
+  Function showDialog,
+  Function closeDialog,
+}) {
   return Column(children: [
     Row(
       children: [
@@ -44,7 +54,10 @@ Widget fileWidget({String filePath, String fileName, String fileExtension, Funct
               child: RaisedButton(
                 padding: EdgeInsets.all(5.0),
                 onPressed: () {
-                  openFile(filePath: filePath, showDialog: showDialog, closeDialog: closeDialog);
+                  openFile(
+                      filePath: filePath,
+                      showDialog: showDialog,
+                      closeDialog: closeDialog);
                 },
                 child: Text("Open"),
                 color: Colors.grey[100],

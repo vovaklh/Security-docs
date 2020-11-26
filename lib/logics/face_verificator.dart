@@ -11,11 +11,12 @@ class FaceVerificator {
   double _mean;
   double _std;
 
-  FaceVerificator(
-      {int size = 112,
-      double mean = 128,
-      double std = 128,
-      int outShape = 192}) {
+  FaceVerificator({
+    int size = 112,
+    double mean = 128,
+    double std = 128,
+    int outShape = 192,
+  }) {
     this._size = size;
     this._mean = mean;
     this._std = std;

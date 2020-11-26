@@ -4,7 +4,12 @@ import 'dart:math';
 import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 
 /// Convert imutils image to Float32List and normalize it
-Float32List imageToByteListFloat32(imutils.Image image, int inputSize, double mean, double std) {
+Float32List imageToByteListFloat32(
+  imutils.Image image,
+  int inputSize,
+  double mean,
+  double std,
+) {
   var convertedBytes = Float32List(1 * inputSize * inputSize * 3);
   var buffer = Float32List.view(convertedBytes.buffer);
   int pixelIndex = 0;
@@ -35,7 +40,7 @@ imutils.Image cropFace(imutils.Image image, Face face, bool rotate) {
   return croppedFace;
 }
 
-/// Compute the euclidean distance between two vectors  
+/// Compute the euclidean distance between two vectors
 double euclideanDistance(List e1, List e2) {
   double sum = 0.0;
   for (int i = 0; i < e1.length; i++) {

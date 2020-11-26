@@ -1,4 +1,4 @@
-#Wed Nov 25 19:02:27 EET 2020
+#Wed Nov 25 21:46:39 EET 2020
 base.0=D\:\\Android_projects\\Security-docs\\build\\app\\intermediates\\transforms\\r8\\release\\0\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
