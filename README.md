@@ -1,13 +1,13 @@
 # Application description
 Many people care about their safety. Nobody wants his information to be with strangers. Especially if it's important information.
 
-Every day people download tons of files to their smartphones. It can be like ordinary books and videos or important documents and contracts that can affect the fate of not only one person, but also the whole company. It is not safe to store such documents in the default downloads application. It would be prudent to protect such documents more securely. This is the main purpose of this application. To access your documents, you must enter a password or scan a face.
+Every day people download tons of files to their smartphones. It can be like ordinary books and videos or important files and contracts that can affect the fate of not only one person, but also the whole company. It is not safe to store such files in the default downloads application. It would be prudent to use secure application. This is the main purpose of my project. To access your documents, you must enter a password or scan a face. All files will be encrypted after adding.
 
 **Note**: all files will be lost if you delete the app. The option to move files back will be added in the next version.
 # Work demonstration
 Please click the image to see the video of work demonstration
 
-[![Demonstration](/resources/images/demo.jpg)](https://youtu.be/BFZXkGst5Bs)
+[![Demonstration](/resources/images/demo.jpg)](https://www.youtube.com/watch?v=fLK5wrNsZNY&feature=youtu.be)
 
 # Installation
 - Go to **build/app/outputs/flutter-apk/** folder
