@@ -12,29 +12,27 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
   final _controller = TextEditingController();
 
   /// Chech if password math the pattern
-  bool validatePassword(String password) {
+  bool _validatePassword(String password) {
     if (password.length >= 8) {
       if (RegExp(PasswordSettingPageStrings.pattern).hasMatch(password)) {
         return true;
       }
-    } else {
-      return false;
     }
+    return false;
   }
 
   /// Reset password to empty string
-  // Set password to empty string after user press enter button
-  void resetPassword() {
+  void _resetPassword() {
     setState(() {
       _controller.text = "";
     });
   }
 
   /// Write password to file
-  Future<void> setPassword(String newPassword) async {
+  Future<void> _setPassword(String newPassword) async {
     Password password = Password();
 
-    if (validatePassword(newPassword)) {
+    if (_validatePassword(newPassword)) {
       await password.setPassword(password: newPassword);
       Navigator.pushReplacementNamed(context, "/home_page");
     }
@@ -47,13 +45,13 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: padlockImage(),
+            child: _padlockImage(),
           ),
           Center(
-            child: passwordField(),
+            child: _passwordField(),
           ),
           Center(
-            child: setPasswordButton(),
+            child: _setPasswordButton(),
           ),
         ],
       ),
@@ -61,7 +59,7 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
   }
 
   /// Return the image of padlock
-  Widget padlockImage() {
+  Widget _padlockImage() {
     return Image(
       image: AssetImage(PasswordSettingPageStrings.pathToImage),
       height: 212,
@@ -70,7 +68,7 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
   }
 
   /// Return the password field
-  Widget passwordField() {
+  Widget _passwordField() {
     return Container(
       margin: EdgeInsets.only(top: 15, left: 20, right: 20),
       child: PasswordField(
@@ -90,13 +88,13 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
   }
 
   /// Return button to set password
-  Widget setPasswordButton() {
+  Widget _setPasswordButton() {
     return Container(
       margin: EdgeInsets.only(top: 15),
       height: 50.0,
       child: RaisedButton(
         onPressed: () {
-          setPassword(_controller.text);
+          _setPassword(_controller.text);
         },
         padding:
             EdgeInsets.only(left: 15.0, right: 15.0, top: 10.0, bottom: 10.0),

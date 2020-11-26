@@ -24,14 +24,14 @@ class MyFaceDetector {
     ImageRotation rotation,
   ) async {
     FirebaseVisionImage visionImage = FirebaseVisionImage.fromBytes(
-        image.planes[0].bytes, buildMetaData(image, rotation));
+        image.planes[0].bytes, _buildMetaData(image, rotation));
     List<Face> faces = await _faceDetector.processImage(visionImage);
 
     return faces;
   }
 
   /// Build metadata of image
-  FirebaseVisionImageMetadata buildMetaData(
+  FirebaseVisionImageMetadata _buildMetaData(
     CameraImage image,
     ImageRotation rotation,
   ) {

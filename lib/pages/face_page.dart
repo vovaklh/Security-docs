@@ -18,14 +18,14 @@ class _FacePageState extends State<FacePage> {
   String _text = FacePageStrings.initialMessage;
 
   /// Set status of face detection(no face detected, too many...)
-  void setStatus(String text) {
+  void _setStatus(String text) {
     setState(() {
       this._text = text;
     });
   }
 
   /// Set state of face page to default
-  void setButtonToDefault() {
+  void _setButtonToDefault() {
     setState(() {
       this._face == null;
       this._text = FacePageStrings.initialMessage;
@@ -33,7 +33,7 @@ class _FacePageState extends State<FacePage> {
   }
 
   /// Encode detected face and save to file
-  Future<void> encodeFace(imutils.Image face) async {
+  Future<void> _encodeFace(imutils.Image face) async {
     FaceVerificator faceVerificator = FaceVerificator();
     await faceVerificator.loadModel(modelPath: FacePageStrings.pathToModel);
     List faceVector = faceVerificator.getOutput(face);
@@ -42,8 +42,8 @@ class _FacePageState extends State<FacePage> {
   }
 
   /// Detect faces in chosen image
-  Future<void> detectFaces() async {
-    setStatus(FacePageStrings.imageSelected);
+  Future<void> _detectFaces() async {
+    _setStatus(FacePageStrings.imageSelected);
 
     File image = await ImagePicker.pickImage(
       source: ImageSource.camera,
@@ -53,9 +53,9 @@ class _FacePageState extends State<FacePage> {
     List<Face> faces = await myFaceDetector.predictImageFromFile(image);
 
     if (faces.length == 0) {
-      setStatus(FacePageStrings.noFaces);
+      _setStatus(FacePageStrings.noFaces);
     } else if (faces.length > 1) {
-      setStatus(FacePageStrings.manyFaces);
+      _setStatus(FacePageStrings.manyFaces);
     } else {
       imutils.Image croppedFace = cropFace(
           imutils.decodeImage(image.readAsBytesSync()), faces.first, true);
@@ -64,7 +64,7 @@ class _FacePageState extends State<FacePage> {
         this._face = Image.memory(imutils.encodePng(croppedFace));
       });
 
-      await encodeFace(croppedFace);
+      await _encodeFace(croppedFace);
 
       Future.delayed(Duration(seconds: 4)).then(
           (value) => Navigator.pushReplacementNamed(context, "/home_page"));
@@ -77,15 +77,15 @@ class _FacePageState extends State<FacePage> {
       appBar: AppBar(
         title: Text(FacePageStrings.title),
       ),
-      body: textOrFace(),
-      bottomNavigationBar: bottomNavigator(),
+      body: _textOrFace(),
+      bottomNavigationBar: _bottomNavigator(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: selectImageButton(),
+      floatingActionButton: _selectImageButton(),
     );
   }
 
   /// Return text if face was not found else return cropped face
-  Widget textOrFace() {
+  Widget _textOrFace() {
     if (_face == null) {
       return Center(
         child: Text(
@@ -106,7 +106,7 @@ class _FacePageState extends State<FacePage> {
   }
 
   /// Return bottom navigation bar
-  Widget bottomNavigator() {
+  Widget _bottomNavigator() {
     return BottomAppBar(
       color: Colors.grey[250],
       child: Container(
@@ -116,12 +116,12 @@ class _FacePageState extends State<FacePage> {
   }
 
   /// Return button to choose image on device
-  Widget selectImageButton() {
+  Widget _selectImageButton() {
     return Container(
       height: 65,
       width: 65,
       child: FloatingActionButton(
-        onPressed: () => detectFaces(),
+        onPressed: () => _detectFaces(),
         child: Icon(
           Icons.add_a_photo,
           size: 35,

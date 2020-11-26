@@ -20,7 +20,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
     _gifController
         .animateTo(_animateTo,
             duration: Duration(milliseconds: _timeOfDuration))
-        .then((value) => goToNextPage());
+        .then((value) => _goToNextPage());
   }
 
   @override
@@ -31,7 +31,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
 
   /// Go to passwordEnteringPage if password exist
   /// else navigate to passwordSetting page
-  Future<void> goToNextPage() async {
+  Future<void> _goToNextPage() async {
     bool passwordExist = await Password().checkIfPasswordExist();
 
     if (passwordExist)
@@ -45,11 +45,11 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: loadingImage(),
+      body: _loadingImage(),
     );
   }
 
-  Widget loadingImage() {
+  Widget _loadingImage() {
     return Center(
       child: GifImage(
         image: AssetImage("assets/images/animation.gif"),

@@ -44,13 +44,13 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
       appBar: AppBar(
         title: Text(HomePageStrings.title),
       ),
-      body: userDocuments(),
+      body: _userDocuments(),
       floatingActionButton: addFaceAndFileButton(goToFacePage, _bloc.addFile),
     );
   }
 
   /// Return StreamBuilder of user files
-  Widget userDocuments() {
+  Widget _userDocuments() {
     return StreamBuilder(
         stream: _bloc.fileStream,
         builder: (BuildContext context, AsyncSnapshot snapshot) {

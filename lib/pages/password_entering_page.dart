@@ -46,7 +46,7 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
   }
 
   /// Start verifying faces
-  Future<void> verifyFace() async {
+  Future<void> _verifyFace() async {
     FaceVerificator faceVerificator = FaceVerificator();
     bool faceExist = await faceVerificator.checkIfFaceExist();
 
@@ -54,7 +54,7 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
       _cameraVerificator = CameraVerificator();
       _cameraVerificator.startDetectingAndVerifyFace(unlock);
     } else {
-      faceDoesNotExistAlertDialog(context);
+      _faceDoesNotExistAlertDialog(context);
     }
   }
 
@@ -66,12 +66,12 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
   }
 
   /// Check if password exist and then compare password user input
-  Future<void> checkPassword(String newPassword) async {
+  Future<void> _checkPassword(String newPassword) async {
     Password password = Password();
     String myPassword = await password.getPassword();
 
     if (myPassword != _controller.text.hashCode.toString()) {
-      incorrectPasswordAlertDialog(context);
+      _incorrectPasswordAlertDialog(context);
     } else {
       _cameraVerificator?.stopVerification();
       await unlock();
@@ -86,16 +86,16 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: padlockGif(),
+            child: _padlockGif(),
           ),
           Center(
-            child: passwordField(),
+            child: _passwordField(),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              inputPasswordButton(),
-              verifyFaceButton(),
+              _inputPasswordButton(),
+              _verifyFaceButton(),
             ],
           ),
         ],
@@ -104,7 +104,7 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
   }
 
   /// Return the gif of padlock
-  Widget padlockGif() {
+  Widget _padlockGif() {
     return GifImage(
       image: AssetImage(PasswordEnteringPageStrings.pathToGif),
       controller: _gifController,
@@ -114,7 +114,7 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
   }
 
   /// Return the password filed
-  Widget passwordField() {
+  Widget _passwordField() {
     return Container(
       margin: EdgeInsets.only(top: 15, left: 20, right: 20),
       child: PasswordField(
@@ -132,13 +132,13 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
   }
 
   /// Return button to input password
-  Widget inputPasswordButton() {
+  Widget _inputPasswordButton() {
     return Container(
       margin: EdgeInsets.only(top: 15),
       height: 50.0,
       child: RaisedButton(
         onPressed: () {
-          checkPassword(_controller.text);
+          _checkPassword(_controller.text);
         },
         padding:
             EdgeInsets.only(left: 15.0, right: 15.0, top: 10.0, bottom: 10.0),
@@ -154,7 +154,7 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
   }
 
   /// Return button to verify face
-  Widget verifyFaceButton() {
+  Widget _verifyFaceButton() {
     return Container(
       height: 50,
       margin: EdgeInsets.only(left: 5.0, top: 15.0),
@@ -163,14 +163,14 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
           Icons.face,
           size: 35,
         ),
-        onPressed: verifyFace,
+        onPressed: _verifyFace,
         backgroundColor: Colors.blue[300],
       ),
     );
   }
 
   /// Show message that password is incorrect
-  incorrectPasswordAlertDialog(BuildContext context) {
+  _incorrectPasswordAlertDialog(BuildContext context) {
     return showDialog(
         context: context,
         builder: (context) {
@@ -190,7 +190,7 @@ class _PasswordEnteringPageState extends State<PasswordEnteringPage>
   }
 
   /// Show message that user doesn't add face
-  faceDoesNotExistAlertDialog(BuildContext context) {
+  _faceDoesNotExistAlertDialog(BuildContext context) {
     return showDialog(
         context: context,
         builder: (context) {
